@@ -3,6 +3,10 @@
     background-color: rgb(228, 236, 247);
 }
 
+div {
+    display: block;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -10,9 +14,20 @@ body {
     flex-direction: column;
 }
 
+h3 {
+    font-size: 17px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: lighter;
+    text-align: left;
+}
+
 header {
     display: flex;
     height: 100px;
+    /* margin: auto; */
 }
 
 .header__logo {
@@ -75,6 +90,7 @@ header {
 
 nav {
     display: flex;
+    /* margin: auto; */
 }
 
 .nav__left {
@@ -104,7 +120,6 @@ nav {
 }
 
 .nav__period {
-    
     background-color: lightsteelblue;
     align-items: center; 
     
@@ -112,6 +127,85 @@ nav {
 
 .nav__right {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px;
+}
+
+.card__img--wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.card__img{
+   
+}
+
+.card__middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 16px;
+}
+
+.card__date {
+    font-size: 12px;
+    color: gray;
+}
+
+.card__profile {
+    width:30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    display:inline-block;
+    text-align: center; 
+}
+
+.card__profile--img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover; 
+}
+
+.card__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    height: 40px;
+}
+
+.card__bottom--left {
+    display: flex;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.card__name span {
+    font-weight: bold;
+}
+
+.card__profile {
+    margin-right: 10px;
+}
+
+.card__bottom--right {
+    margin-left: auto;
+    flex-direction:row;
     display: flex;
     align-items: center;
 }
