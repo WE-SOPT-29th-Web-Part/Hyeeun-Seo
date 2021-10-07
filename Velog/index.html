@@ -12,17 +12,23 @@
     <header>
         <h1 class="header__logo"> velog </h1>
         <div class="header__right">
-            <buttton class="header__search">
+            <span class="header__search">
                 <span class="material-icons">search</span>
-            </buttton>
-            <div class="header__mode--mode">Dark Mode</div>
-            <button>로그인</button>
-            <img class="header__profile--img" src="cat.jpg">
-            <div class="header__arrow">
+            </span>
+            <span class="header__mode--mode">Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <button class="header__new">새 글 작성</button>
+            <div class="header__profile">
+                <img class="header__profile--img" src="cat.jpg">
+            </div>
+            <span class="header__arrow">
                 <span class="material-icons">
                     arrow_drop_down
                 </span>
-            </div>
+            </span>
         </div>
     </header>
     <nav>
