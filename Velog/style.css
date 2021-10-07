@@ -23,9 +23,9 @@ header {
 
 .header__right {
     margin-left: auto;
-    text-align: center;
     flex-direction:row;
-    line-height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .header__search,
@@ -64,13 +64,54 @@ header {
     border-radius: 70%;
     overflow: hidden;
     display:inline-block;
+    text-align: center; 
 }
 
 .header__profile--img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit:cover; 
 }
 
+nav {
+    display: flex;
+}
 
+.nav__left {
+    display: flex;
+    height: 100px;
+}
 
+.nav__trending,
+.nav__recent,
+.nav__period {
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.nav__trending {
+    font-size: large;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding-right: 20px;
+}
+
+.nav__recent {
+    font-size: large;
+    color: gray;
+}
+
+.nav__period {
+    
+    background-color: lightsteelblue;
+    align-items: center; 
+    
+}
+
+.nav__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
