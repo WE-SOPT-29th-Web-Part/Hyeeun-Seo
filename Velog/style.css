@@ -1,4 +1,4 @@
-* {
+body {
     box-sizing: border-box;
     background-color: rgb(228, 236, 247); 
 }
@@ -26,12 +26,29 @@ h4 {
 
 header {
     display: flex;
+    align-items: center;
     height: 100px;
-    /* margin: auto; */
+    justify-content: space-between;
 }
 
-@media (max-width: 1440px){
-   
+@media (max-width: 1056px){
+   header, nav, .cards {
+       max-width: calc(100% - 2rem);
+   }
+   header
+}
+
+@media (width: 767px) {
+    .card {
+        width: 100%;
+    }
+}
+
+header,
+nav,
+.cards {
+    margin-left: 10px; 
+    margin-right: 10px;
 }
 
 .header__logo {
@@ -108,7 +125,7 @@ header {
 }
 
 .header__new {
-    background-color: lightsteelblue;
+    background-color: rgb(214, 232, 240);
     text-align: center;
     text-decoration: none;
     font-weight: lighter;
@@ -174,9 +191,26 @@ nav {
 }
 
 .nav__period {
-    background-color: lightsteelblue;
+    display: flex;
+    background-color: rgb(214, 232, 240);
     align-items: center; 
-    
+    justify-content: space-between;
+    width: 100px;
+    position: relative;
+    padding: 4px 2px;
+    cursor: pointer;
+}
+
+.nav__period--icon {
+    background-image: url('	https://velog-clone.netlify.app/assets/icons/arrow_drop_down.svg');
+    width: 22px;
+    height: 22px;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+.nav__dropdown {
+    display: none;
 }
 
 .nav__right {
@@ -197,10 +231,17 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: rgb(214, 232, 240) !important;
+    background-color: rgb(214, 232, 240);
     margin: 16px;
     border-radius: 4px;
     cursor: pointer;
+    transition: .25s;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 20px #ddd;
+    transform: translateY(-8px);
+    transition: .25s;
 }
 
 .card__img--wrapper {
@@ -248,6 +289,7 @@ nav {
     justify-content: space-between;
     padding: 10px 16px;
     height: 40px;
+
 }
 
 .card__bottom--left {
@@ -255,6 +297,7 @@ nav {
     text-align: center;
     font-weight: lighter;
     font-size: 15px;
+    border-radius: 0 0 10px 10px;
 }
 
 .card__name span {
