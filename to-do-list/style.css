@@ -129,6 +129,6 @@ input {
     font-size: 30px;
 }
 
-button {
+.todos__btn--wrapper span {
     cursor: pointer;
 }
