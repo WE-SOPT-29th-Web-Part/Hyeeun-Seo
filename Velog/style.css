@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    background-color: rgb(228, 236, 247);
+    background-color: rgb(228, 236, 247); 
 }
 
 div {
@@ -30,6 +30,10 @@ header {
     /* margin: auto; */
 }
 
+@media (max-width: 1440px){
+   
+}
+
 .header__logo {
     text-align: center;
     font-weight: lighter;
@@ -44,13 +48,63 @@ header {
 }
 
 .header__search,
-.switch,
+.header__mode--mode,
+.header__switch,
 .header__new {
     margin-right: 20px;
 }
 
 .header__mode--mode{
     font-size: 16px;
+}
+
+.header__switch{
+    position: relative;
+    display: inline-block; 
+    width: 55px;
+    height: 30px;
+}
+
+.header__switch input {
+    opacity: 0;
+    width: 0;
+    height:0;
+}
+
+.header__switch--onoff {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: #ccc;
+    -webkit-animation: .4s;
+    transition: .4s;
+}
+
+.header__switch--onoff:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-animation: .5s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.header__switch input:checked + .header__switch--onoff {
+    background-color: #F2D522;
+}
+
+.header__switch input:checked + .header__switch--onoff::before {
+    -webkit-animation: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 .header__new {
@@ -141,7 +195,12 @@ nav {
 }
 
 .card {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(214, 232, 240) !important;
+    margin: 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .card__img--wrapper {
@@ -150,7 +209,10 @@ nav {
 }
 
 .card__img{
-   
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   border-radius: 10px 10px 0 0;
 }
 
 .card__middle {
