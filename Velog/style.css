@@ -189,8 +189,9 @@ nav {
 
 .nav__left {
     display: flex;
-    height: 100px;
+    margin-bottom: 30px;
     margin-left: 10px;
+    align-items: baseline; /*정렬된..!*/
 }
 
 .nav__trending,
