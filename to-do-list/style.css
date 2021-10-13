@@ -130,5 +130,6 @@ input {
 }
 
 .todos__btn--wrapper span {
+    
     cursor: pointer;
 }
