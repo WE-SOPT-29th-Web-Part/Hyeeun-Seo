@@ -16,7 +16,7 @@ h3 {
     font-size: 17px;
 }
 
-h4 {
+.card__middle--content {
     font-size: 14px;
     font-weight: lighter;
     text-align: left;
