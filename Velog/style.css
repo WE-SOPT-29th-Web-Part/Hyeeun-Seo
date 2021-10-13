@@ -88,13 +88,13 @@ nav,
 }
 
 .header__search,
-.header__mode--mode,
+.header__mode,
 .header__switch,
 .header__new {
     margin-right: 20px;
 }
 
-.header__mode--mode{
+.header__mode{
     font-size: 16px;
 }
 
@@ -268,7 +268,7 @@ nav {
     transition: .25s;
 }
 
-.card__img--wrapper {
+.card__img__wrapper {
     position: relative;
     width: 100%;
 }
@@ -302,7 +302,7 @@ nav {
     text-align: center; 
 }
 
-.card__profile--img {
+.card__img {
     width: 100%;
     height: 100%;
     object-fit:cover; 
