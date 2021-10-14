@@ -60,10 +60,30 @@ input.addEventListener('keyup', (event) => {
 
 const trash = document.querySelectorAll(".todos__delete");
 trash.forEach((t) => {
-    const target = t.closest("li")
+    const target = t.closest("li");
     t.addEventListener("click", () => {
         target.remove();
     })
 });
 
+//4. 오늘만보기, 내일만보기, 함께보기, 필터링 적용
+const options = document.querySelector(".options");
+const todaySection = document.querySelector(".todos__today");
+const tomorrowSection = document.querySelector(".todos__tomorrow");
+
+options.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.classList.contains("options__today")){
+        todaySection.classList.add("open");
+        tomorrowSection.classList.remove("open");
+    }
+    else if(target.classList.contains("options__tomorrow")){
+        todaySection.classList.remove("open");
+        tomorrowSection.classList.add("open");
+    }
+    else if(target.classList.contains("options__both")){
+        todaySection.classList.add("open");
+        tomorrowSection.classList.add("open");
+    }
+});
 

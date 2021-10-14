@@ -61,12 +61,14 @@ footer {
     align-items: center;
     width: 0px;
     visibility: hidden;
+    transition: width 300ms ease-in;
 }
 
 .todos__today.open,
 .todos__tomorrow.open {
     width: 100%;
     visibility: visible;
+    transition: width 300ms ease-in;
 }
 
 .todos__today {
@@ -139,3 +141,5 @@ input {
     outline: 0;
     cursor: pointer;
 }
+
+
