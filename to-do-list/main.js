@@ -10,9 +10,6 @@
 //a. add 버튼을 눌렀을 때, input의 value를 가져오기
 //b. 가져온 value를 바탕으로, list 만들기
 
-//우리가 조작해야할 html tag.
-//.todos__input, .todos__add, .todos__items  "todos": Unknown;
-
 //DOM 요소를 가지고 오는 방법
 const input = document.querySelector(".todos__input");  
 const addBtn = document.querySelector(".todos__btn--wrapper > span");
@@ -36,17 +33,19 @@ const addList = () => {
     // deleteBtn.innerText = "X";
     span.innerText = input.value;
 
+    //붙여주기
     items.appendChild(li);
     deleteBtn.appendChild(img);
     li.appendChild(span);
     li.appendChild(deleteBtn);
 
-    input.value = "";
+    input.value = "";//다시 공백으로 만들어주기
 }
 
+//1. add 버튼을 눌렀을 때, list가 추가되도록
 addBtn.addEventListener("click", () => {
     if (!input.value) return;
-    console.log('input.value', input.value);
+    //console.log('input.value', input.value);
     addList();
 });
 
@@ -58,6 +57,7 @@ input.addEventListener('keyup', (event) => {
     }
 });
 
+//3. 쓰레기통을 누르면 지워지도록.
 const trash = document.querySelectorAll(".todos__delete");
 trash.forEach((t) => {
     const target = t.closest("li");
