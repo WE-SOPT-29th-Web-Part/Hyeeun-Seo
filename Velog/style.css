@@ -264,7 +264,7 @@ nav {
 }
 
 .card:hover {
-    box-shadow: 1px 1px 20px #ddd;
+    box-shadow: 1px 1px 20px rgb(187, 187, 187);
     transform: translateY(-8px);
     transition: .25s;
 }
