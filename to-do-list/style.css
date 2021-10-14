@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;/*총 너비를 유지하기 위한 박스모델*/
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;/*100 viewport height*/
+    width: 100%;/*레이아웃 유연하게 지정*/
+    flex-direction: column;
+}
+
+header,
+footer {
+    width: 100%;
+    background-color: rgba(101, 150, 61, 0.473);
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.header__logo {
+    margin: 0; /*기본적으로 margin이 있는 h1태그의 마진 없애주기*/
+    font-size: 32px;
+    text-align: center; /*수평정렬방법*/
+    height: 50px;
+    line-height: 50px;/*수직정렬방법*/
+}
+
+.options {
+    display: flex;
+    justify-content: center; /*justify-content와 text-align의 차이*/
+    margin: 10px 0;
+}
+
+.options__btn {
+    background-color: rgba(250, 141, 98, 0.671);
+    border: 0;
+    outline: 0;
+    margin-right: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.options > button:nth-child(3) {
+    margin-right: 0;
+}
+
+.todos {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+}
+
+.todos__today, 
+.todos__tomorrow {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 0px;
+    visibility: hidden;
+}
+
+.todos__today.open,
+.todos__tomorrow.open {
+    width: 100%;
+    visibility: visible;
+}
+
+.todos__today {
+    border-right: 1px solid lightslategray;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+}
+
+li > span {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+}
+
+input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+}
+
+.todos__item {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.todos__items {
+    margin: 0;
+    width: 100%;
+    flex: 1;
+    padding: 0 20px;
+}
+
+
+.todos_name {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+}
+
+.todos__input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+}
+
+.todos__btn--wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.todos__add {
+    font-size: 30px;
+}
+
+.todos__btn--wrapper span {
+    
+    cursor: pointer;
+}
