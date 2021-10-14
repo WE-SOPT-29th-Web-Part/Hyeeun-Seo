@@ -84,7 +84,7 @@ li {
     border-bottom: 1px solid lightgray;
 }
 
-li > span {
+li > span{
     display: inline-block;
     height: 35px;
     line-height: 35px;
