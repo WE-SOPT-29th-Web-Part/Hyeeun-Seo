@@ -15,22 +15,29 @@
 
 //DOM 요소를 가지고 오는 방법
 const input = document.querySelector(".todos__input");  
-const addBtn = document.querySelector(".todos__add");
+const addBtn = document.querySelector(".todos__btn--wrapper > span");
 const items = document.querySelector(".todos__items");
 
 const addList = () => {
     const li = document.createElement("li");
     const span = document.createElement("span");   
     const deleteBtn = document.createElement("button");
+    const img = document.createElement("img");
+
+    deleteBtn.addEventListener ('click',() => {
+        li.remove();
+    });
     //태그를 만드는 과정
     li.setAttribute("class", "todos__item");
     span.setAttribute("class", "todos__span");
     deleteBtn.setAttribute("class", "todos__delete");
+    img.setAttribute("src", "./assets/icon/trash-can.svg");
 
-    deleteBtn.innerText = "X";
+    // deleteBtn.innerText = "X";
     span.innerText = input.value;
 
     items.appendChild(li);
+    deleteBtn.appendChild(img);
     li.appendChild(span);
     li.appendChild(deleteBtn);
 
@@ -50,4 +57,13 @@ input.addEventListener('keyup', (event) => {
         addList();
     }
 });
+
+const trash = document.querySelectorAll(".todos__delete");
+trash.forEach((t) => {
+    const target = t.closest("li")
+    t.addEventListener("click", () => {
+        target.remove();
+    })
+});
+
 
