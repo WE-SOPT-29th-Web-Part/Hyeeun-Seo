@@ -18,59 +18,36 @@ const input = document.querySelector(".todos__input");
 const addBtn = document.querySelector(".todos__add");
 const items = document.querySelector(".todos__items");
 
-addBtn.addEventListener("click", () => {
-    if (!input.value) return;
-    console.log('input.value', input.value);
+const addList = () => {
     const li = document.createElement("li");
-    // <li></li>
-    const span = document.createElement("span");
-    
+    const span = document.createElement("span");   
     const deleteBtn = document.createElement("button");
     //태그를 만드는 과정
-
     li.setAttribute("class", "todos__item");
-    // <li class="todos__item"></li>
     span.setAttribute("class", "todos__span");
-
     deleteBtn.setAttribute("class", "todos__delete");
-    // class 이름을 주는 과정.
 
-    deleteBtn.InnerText = "X";
-    // X. 
-    // img에 src로 넣으신 분
+    deleteBtn.innerText = "X";
     span.innerText = input.value;
-    // <span>input.value</span>
 
     items.appendChild(li);
     li.appendChild(span);
     li.appendChild(deleteBtn);
 
     input.value = "";
-});
-// 2개의 인수로 필요합니다. 처음은 이벤트명, 두번 째
+}
 
-//2. enter 키보드 키를 눌렀을 때 list가 추가되도록
-//다양한 이벤트가 존재한다. click, keyup, keypress, scroll
+addBtn.addEventListener("click", () => {
+    if (!input.value) return;
+    console.log('input.value', input.value);
+    addList();
+});
+
+//2. enter 키보드 키를 눌렀을 때 list가 추가되도록 
 input.addEventListener('keyup', (event) => {
     if (!input.value) return;
-    // console.log('event', event.key);
     if (event.key === "Enter") {
-        const li = document.createElement("li");
-        // <li></li>
-        const span = document.createElement("span");
-        
-        const deleteBtn = document.createElement("button");
-        //태그를 만드는 과정
-
-        li.setAttribute("class", "todos__item");
-        // <li class="todos__item"></li>
-        span.setAttribute("class", "todos__span");
-
-        deleteBtn.setAttribute("class", "todos__delete");
+        addList();
     }
-
 });
 
-const onAdd = () => {
-    
-}
