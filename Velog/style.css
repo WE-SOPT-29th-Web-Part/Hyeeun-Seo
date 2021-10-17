@@ -215,7 +215,7 @@ nav {
     color: gray;
 }
 
-.nav__period {
+.nav__period{
     display: flex;
     background-color: rgb(214, 232, 240);
     align-items: center; 
@@ -236,6 +236,23 @@ nav {
 
 .nav__dropdown {
     display: none;
+    position: absolute;
+    align-items: left; 
+    top: 100%;
+    list-style: none;
+    background-color: rgb(214, 232, 240);
+    z-index: 1;
+    border
+}
+
+.nav__dropdown > li {
+    border-top: 1px solid;
+    width: 192px;
+}
+
+.nav__dropdown > li:nth-child(1) {
+    border-top: none;
+    pa
 }
 
 .nav__right {
@@ -314,7 +331,7 @@ nav {
     justify-content: space-between;
     padding: 10px 16px;
     height: 40px;
-
+    align-items: baseline; /*정렬된..!*/
 }
 
 .card__bottom--left {
