@@ -25,11 +25,10 @@ function onclickMenu() {
 
 navBtn.addEventListener("click", onclickMenu);
 
-//b. dropdown 메뉴 클릭했을 때, 색 변화
-//검은색 글씨를 클릭했을 때 
+//b. dropdown 메뉴 클릭했을 때, 색 변화 
 //글씨색이 녹색으로 변하고, 나머지 글씨색 검은색, 버튼 값에 클릭한 글자 반환
 const navDropDownList = document.querySelector(".nav__dropdown >li");
-let navBtnText = document.querySelector("nav__period--text");
+let navBtnText = document.querySelector(".nav__period--text");
 
 function clickDropDownList (e) {
     const todayBtn = document.querySelector(".nav__dropdown--today");
