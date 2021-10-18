@@ -223,12 +223,14 @@ nav {
     position: relative;
     padding: 4px 2px;
     cursor: pointer;
+    height: 40px;
     
 }
 
 .nav__period__btn {
     padding-left: 10px;
-    align-items: center; 
+    /* align-items: center; 왜 여기 넣으면 안될까요*/
+    /*은근 맞지 않는 버튼의 위아래 폭 */
 }
 
 .nav__period--icon {
@@ -240,7 +242,7 @@ nav {
 }
 
 .nav__dropdown {
-    display: inline-block;
+    display: none;
     position: absolute;
     align-items: left; 
     top: 100%;
@@ -251,13 +253,24 @@ nav {
 }
 
 .nav__dropdown > li {
-    border-top: 1px solid;
+    border-top: 1px solid black;
     width: 192px;
     padding: 8px;
 }
 
 .nav__dropdown > li:nth-child(1) {
     border-top: none;
+}
+
+.nav__dropdown > li:hover {
+    color: rgb(62, 194, 62);
+}
+
+.nav__dropdown--today.clicked,
+.nav__dropdown--week.clicked,
+.nav__dropdown--month.clicked,
+.nav__dropdown--year.clicked {
+    color: rgb(62, 194, 62);
 }
 
 .nav__right {
