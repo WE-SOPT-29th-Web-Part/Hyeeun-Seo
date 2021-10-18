@@ -264,6 +264,8 @@ nav {
 
 .nav__dropdown > li:hover {
     color: rgb(62, 194, 62);
+    background-color: rgb(197, 214, 221);
+    transition: .25s;
 }
 
 .nav__dropdown--today.clicked,
