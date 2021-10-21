@@ -176,6 +176,7 @@ nav,
 }
 
 .header__profile--img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit:cover; 
@@ -299,11 +300,13 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
+    min-width: 320px;
     background-color: rgb(214, 232, 240);
     margin: 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: .25s;
+    position: relative;
 }
 
 .card:hover {
@@ -318,10 +321,13 @@ nav {
 }
 
 .card__img{
-    object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 10px 10px 0 0;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    object-fit: cover;
 }
 
 .card__middle {
@@ -344,12 +350,6 @@ nav {
     overflow: hidden;
     display:inline-block;
     text-align: center; 
-}
-
-.card__img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover; 
 }
 
 .card__bottom {
@@ -399,14 +399,14 @@ nav {
     background-color: rgba(0,0,0,0.6);
     width: 100%;
     height: 100%;
-    position: absolute;
-}
+    position: fixed;
+} 
 
 .modal__content {
     background-color: white;
     padding: 50px 100px;
     text-align: center;
-    position: relative;
+    position: fixed;
     border-radius: 4px;
     width: 20%;
     height: 20%;
@@ -414,11 +414,15 @@ nav {
 }
 
 .modal__card__closebtn {
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
     cursor: pointer;
+    transform: translate(50%, 150%);
 }
 
 .modal__card__content {
-    padding: 0;
+    position: fixed;
 }
 
 .hidden {

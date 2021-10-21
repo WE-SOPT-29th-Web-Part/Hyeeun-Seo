@@ -95,7 +95,7 @@ navDropDownList.addEventListener("click", clickDropDownList);
 const clickCard = document.querySelector('.cards');
 const modal = document.querySelector('.modal');
 const content = modal.querySelector(".modal__content");
-const cardContend = modal.querySelector(".modal__card__content");
+const cardContent = modal.querySelector(".modal__card__content");
 const overlay = modal.querySelector(".modal__overlay");
 const closeBtn = modal.querySelector(".modal__card__closebtn");
 
@@ -104,7 +104,7 @@ function openModal (e){
     const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
 
-    content.append(cloneCard);
+    cardContent.append(cloneCard);
 
     modal.classList.remove("hidden");
 };
