@@ -101,8 +101,8 @@ const closeBtn = modal.querySelector(".card__modal__closebtn");
 
 function openModal (e){
     console.log("hi")
-    const target = e.target;
-    const cloneCard = target.cloneNode();
+    const target = e.target.closest("div.card");
+    const cloneCard = target.cloneNode(true);
 
     // zIndex = zIndex;
     content.append(cloneCard);
@@ -121,21 +121,3 @@ overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 openCard.addEventListener("click", openModal);
 
-
-const input = document.querySelector(".input");
-input.addEventListener('keyup', (event) => {
-    if (event.key === "Enter") {
-        const span = document.createElement("span");
-
-        span.addEventListener('click',() => {
-            span.remove();
-        });
-
-        span.setAttribute("class", "tag");
-        span.innerText = input.value;
-
-        input.appendChild(span);
-
-        input.value = "";
-    }
-});
