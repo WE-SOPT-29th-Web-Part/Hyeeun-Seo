@@ -1,11 +1,10 @@
-body {
+body {/*어떻게 하면 가로 스크롤 안생길 수 있을까*/
     box-sizing: border-box;
     background-color: rgb(228, 236, 247); 
     margin: auto;
     display: flex;
     width: 100%;/*레이아웃 유연하게 지정*/
     flex-direction: column;
-    width: 100%
 }
 
 div {
@@ -233,7 +232,7 @@ nav {
     /*은근 맞지 않는 버튼의 위아래 폭 */
 }
 
-.nav__period--icon {
+.nav__period--icon {/*아이콘 위치 고정 어떻게*/
     background-image: url('	https://velog-clone.netlify.app/assets/icons/arrow_drop_down.svg');
     width: 22px;
     height: 22px;
@@ -312,10 +311,10 @@ nav {
 }
 
 .card__img{
-   object-fit: cover;
-   width: 100%;
-   height: 100%;
-   border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .card__middle {
