@@ -92,19 +92,18 @@ navDropDownList.addEventListener("click", clickDropDownList);
 //b. X 클릭 시 modal이 내려간다
 //c. modal이 띄어진 동안, scroll이 되지 않도록 한다
 
-const openCard = document.querySelector('.cards');
+const clickCard = document.querySelector('.cards');
 const modal = document.querySelector('.modal');
 const content = modal.querySelector(".modal__content");
+const cardContend = modal.querySelector(".modal__card__content");
 const overlay = modal.querySelector(".modal__overlay");
-const closeBtn = modal.querySelector(".card__modal__closebtn");
+const closeBtn = modal.querySelector(".modal__card__closebtn");
 
 
 function openModal (e){
-    console.log("hi")
-    const target = e.target.closest("div.card");
+    const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
 
-    // zIndex = zIndex;
     content.append(cloneCard);
 
     modal.classList.remove("hidden");
@@ -112,12 +111,11 @@ function openModal (e){
 
 
 function closeModal () {
-    console.log("bye");
     modal.classList.add("hidden");
 
 };
 
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
-openCard.addEventListener("click", openModal);
+clickCard.addEventListener("click", openModal);
 
