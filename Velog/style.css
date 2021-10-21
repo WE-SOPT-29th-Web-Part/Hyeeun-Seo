@@ -349,8 +349,9 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 10px 16px;
-    height: 40px;
-    align-items: baseline; /*정렬된..!*/
+    height: 25px;
+    /* align-items: baseline; 정렬된..! */
+    border-radius: 0 0 10px 10px;
 }
 
 .card__bottom--left {
@@ -358,7 +359,6 @@ nav {
     text-align: center;
     font-weight: lighter;
     font-size: 15px;
-    border-radius: 0 0 10px 10px;
 }
 
 .card__name span {
@@ -374,4 +374,5 @@ nav {
     flex-direction:row;
     display: flex;
     align-items: center;
+    font-size: 15px;
 }
