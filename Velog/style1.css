@@ -1,9 +1,21 @@
 body {
-    
+
 }
 
 .input {
     outline: none;
     border: none;
     width: 200px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0 16px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 12px;
+    background-color: rgb(228, 236, 247);
+    color: rgb(62, 194, 62);
+    border-radius: 10px;
+    cursor: pointer;
 }

@@ -120,3 +120,22 @@ function closeModal () {
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 openCard.addEventListener("click", openModal);
+
+
+const input = document.querySelector(".input");
+input.addEventListener('keyup', (event) => {
+    if (event.key === "Enter") {
+        const span = document.createElement("span");
+
+        span.addEventListener('click',() => {
+            span.remove();
+        });
+
+        span.setAttribute("class", "tag");
+        span.innerText = input.value;
+
+        input.appendChild(span);
+
+        input.value = "";
+    }
+});
