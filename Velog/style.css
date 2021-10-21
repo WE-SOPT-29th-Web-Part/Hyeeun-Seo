@@ -234,17 +234,16 @@ nav {
 }
 
 .nav__period--text {
-    padding-bottom: 20px;
+    font-weight: bold;
 }
 
 .nav__period--icon {/*아이콘 위치 고정 어떻게*/
     background-image: url('	https://velog-clone.netlify.app/assets/icons/arrow_drop_down.svg');
     width: 22px;
     height: 22px;
-    /* margin-left: 4px ; */
     display: inline-block;
     position: fixed;
-    left: 330px;
+    left: 323px;
     top: 110px
 }
 
