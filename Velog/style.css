@@ -384,6 +384,12 @@ nav {
     font-size: 15px;
 }
 
+.input {
+    outline: none;
+    border: none;
+    width: 200px;
+}
+
 .modal {   
     position: fixed;
     top: 0;
