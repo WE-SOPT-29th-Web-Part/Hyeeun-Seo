@@ -228,7 +228,7 @@ nav {
 
 .nav__period__btn {
     padding-left: 10px;
-    padding-bottom: 7px;
+    padding-bottom: 6px;
     /* align-items: center; 왜 여기 넣으면 안될까요*/
     /*은근 맞지 않는 버튼의 위아래 폭 */
 }
@@ -241,8 +241,11 @@ nav {
     background-image: url('	https://velog-clone.netlify.app/assets/icons/arrow_drop_down.svg');
     width: 22px;
     height: 22px;
-    margin-left: 4px;
+    /* margin-left: 4px ; */
     display: inline-block;
+    position: fixed;
+    left: 330px;
+    top: 110px
 }
 
 .nav__dropdown {
