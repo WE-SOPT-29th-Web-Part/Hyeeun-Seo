@@ -90,8 +90,8 @@ function openModal (e){
     const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
 
-    if (cardContent) {
-        const child = cardContent
+    if (cardContent.child != null) {
+        const child = cardContent.child;
         cardContent.replaceChild(cloneCard, child);
     } else cardContent.append(cloneCard);
 

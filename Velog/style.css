@@ -425,7 +425,7 @@ nav {
 }
 
 .modal__card__content {
-    position: fixed;
+    /* position: fixed; */
 }
 
 .hidden {
