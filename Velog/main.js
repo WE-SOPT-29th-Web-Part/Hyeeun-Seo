@@ -96,9 +96,9 @@ function openModal (e){
         cardContent.append(cloneCard);
     }
 
+    document.body.style.overflow = "hidden";
     modal.classList.remove("hidden");
 };
-console.log("bye");
 
 function closeModal () {
     modal.classList.add("hidden");
@@ -109,5 +109,3 @@ overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 clickCard.addEventListener("click", openModal);
 
-//모달창 개수
-//모달창 켜졌을 때 스크롤 고정
