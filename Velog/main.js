@@ -85,7 +85,6 @@ const cardContent = modal.querySelector(".modal__card__content");
 const overlay = modal.querySelector(".modal__overlay");
 const closeBtn = modal.querySelector(".modal__card__closebtn");
 
-
 function openModal (e){
     const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
@@ -101,10 +100,12 @@ function openModal (e){
 
 function closeModal () {
     modal.classList.add("hidden");
-
+    document.body.style.overflow = "visible";
 };
 
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 clickCard.addEventListener("click", openModal);
 
+//모달창 개수
+//모달창 켜졌을 때 스크롤 고정
