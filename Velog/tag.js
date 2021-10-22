@@ -2,21 +2,23 @@
 
 const input = document.querySelector(".input");
 
+let tagArr = [];
+
 input.addEventListener('keyup', (event) => {
     if (event.key === "Enter") {
         console.log("hi")
         
         const span = document.createElement("span");
-
+        
         span.addEventListener('click',() => {
             span.remove();
         });
 
         span.setAttribute("class", "tag");
-        span.innerText = input.value;
+        span.innerText = event.target.value;
+        document.body.insertBefore(span,input);
 
-        input.appendChild(span);
-        
-        input.value = "";
+        tagArr.push(event.target.value)
+        event.target.value = "";
     }
 });
