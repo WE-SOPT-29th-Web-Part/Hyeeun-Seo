@@ -6,8 +6,6 @@ let tagArr = [];
 
 input.addEventListener('keyup', (event) => {
     if (event.key === "Enter") {
-        console.log("hi")
-        
         const span = document.createElement("span");
         
         span.addEventListener('click',() => {
