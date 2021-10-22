@@ -407,10 +407,13 @@ nav {
     padding: 50px 100px;
     text-align: center;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 4px;
-    width: 20%;
-    height: 20%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);   
+/* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+    width: fit-content;
+    height: auto;
 }
 
 .modal__card__closebtn {

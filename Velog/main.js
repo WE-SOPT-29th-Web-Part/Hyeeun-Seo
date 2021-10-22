@@ -73,25 +73,11 @@ function clickDropDownList (e) {
 
 navDropDownList.addEventListener("click", clickDropDownList);
 
-// const navDropDownList1 = document.querySelectorAll(".nav__dropdown >li");
-// let navBtnText = document.querySelector(".nav__period--text");
-
-// navDropDownList1.forEach((t)=> {
-//     const target = t.target;
-//     t.addEventListener("click", () => {
-//         navBtnText.innerText = target.innerText;
-//         t.target.add("clicked");
-//         Array.from(navDropDownList1.children).forEach((element) =>
-//             element.classList.remove("clicked")
-//     )
-//     })
-// })
 
 //2. 모달창 구현
 //a. card 클릭 시, modal을 띄운다
 //b. X 클릭 시 modal이 내려간다
 //c. modal이 띄어진 동안, scroll이 되지 않도록 한다
-
 const clickCard = document.querySelector('.cards');
 const modal = document.querySelector('.modal');
 const content = modal.querySelector(".modal__content");
@@ -104,7 +90,10 @@ function openModal (e){
     const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
 
-    cardContent.append(cloneCard);
+    if (cardContent) {
+        const child = cardContent
+        cardContent.replaceChild(cloneCard, child);
+    } else cardContent.append(cloneCard);
 
     modal.classList.remove("hidden");
 };
