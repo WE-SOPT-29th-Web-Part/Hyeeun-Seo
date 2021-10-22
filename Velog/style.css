@@ -259,6 +259,10 @@ nav {
     padding-left: 0%;
 }
 
+.visible{
+    visibility: visible;
+}
+
 .nav__dropdown > li {
     border-top: 1px solid black;
     width: 192px;

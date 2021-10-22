@@ -89,14 +89,16 @@ function openModal (e){
     const target = e.target.closest("article");
     const cloneCard = target.cloneNode(true);
 
-    if (cardContent.appendChild != null) {
-        const child = cardContent.appendChild;
+    if (cardContent.firstElementChild) {
+        const child = cardContent.firstElementChild;
         cardContent.replaceChild(cloneCard, child);
-    } else cardContent.append(cloneCard);
+    } else {
+        cardContent.append(cloneCard);
+    }
 
     modal.classList.remove("hidden");
 };
-
+console.log("bye");
 
 function closeModal () {
     modal.classList.add("hidden");
