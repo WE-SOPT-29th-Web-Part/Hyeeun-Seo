@@ -30,47 +30,6 @@ navBtn.addEventListener("click", onclickMenu);
 const navDropDownList = document.querySelector(".nav__dropdown");
 let navBtnText = document.querySelector(".nav__period--text");
 
-// function clickDropDownList (e) {
-//     const todayBtn = document.querySelector(".nav__dropdown--today");
-//     const weekBtn = document.querySelector(".nav__dropdown--week");
-//     const monthBtn = document.querySelector(".nav__dropdown--month");
-//     const yearBtn = document.querySelector(".nav__dropdown--year");
-    
-//     const target = e.target;
-
-//     const innerText = () => {
-//         navBtnText.innerText = target.innerText;
-//     }
-
-//     if (target.classList.contains("nav__dropdown--today")) {
-//         innerText();
-//         todayBtn.style.color = 'rgb(62, 194, 62)';
-//         weekBtn.style.color = 'black';
-//         monthBtn.style.color = 'black';
-//         yearBtn.style.color = 'black';
-//     } else if (target.classList.contains("nav__dropdown--week")) {
-//         innerText();
-//         weekBtn.style.color = 'rgb(62, 194, 62)';
-//         todayBtn.style.color = 'black';
-//         monthBtn.style.color = 'black';
-//         yearBtn.style.color = 'black';
-//     } else if (target.classList.contains("nav__dropdown--month")) {
-//         innerText();
-//         monthBtn.style.color = 'rgb(62, 194, 62)';
-//         todayBtn.style.color = 'black';
-//         weekBtn.style.color = 'black';
-//         yearBtn.style.color = 'black';
-//     } else if (target.classList.contains("nav__dropdown--year")) {
-//         innerText();
-//         yearBtn.style.color = 'rgb(62, 194, 62)';
-//         todayBtn.style.color = 'black';
-//         weekBtn.style.color = 'black';
-//         monthBtn.style.color = 'black';
-//     }
-    
-// }
-
-
 function clickDropDownList(e) {
     const todayBtn = document.querySelector(".nav__dropdown--today");
     const weekBtn = document.querySelector(".nav__dropdown--week");
