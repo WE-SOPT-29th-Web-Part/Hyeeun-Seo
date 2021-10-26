@@ -428,3 +428,9 @@ nav {
 .hidden {
     display: none;
 }
+/* 
+.visible {
+box-shadow: none;
+    transform: none;
+    transition: none;
+} */

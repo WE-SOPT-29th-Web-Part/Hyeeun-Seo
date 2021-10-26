@@ -96,8 +96,8 @@ const overlay = modal.querySelector(".modal__overlay");
 const closeBtn = modal.querySelector(".modal__card__closebtn");
 
 function openModal (e){
-    const target = e.target.closest("article");
-    const cloneCard = target.cloneNode(true);
+    const t = e.target.closest("article");
+    const cloneCard = t.cloneNode(true);
 
     if (cardContent.firstElementChild) {
         const child = cardContent.firstElementChild;
