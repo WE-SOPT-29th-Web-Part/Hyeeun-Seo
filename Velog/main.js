@@ -31,53 +31,57 @@ const navDropDownList = document.querySelector(".nav__dropdown");
 let navBtnText = document.querySelector(".nav__period--text");
 
 function clickDropDownList(e) {
-    const todayBtn = document.querySelector(".nav__dropdown--today");
-    const weekBtn = document.querySelector(".nav__dropdown--week");
-    const monthBtn = document.querySelector(".nav__dropdown--month");
-    const yearBtn = document.querySelector(".nav__dropdown--year");
-    
-    const t = e.target;
+    // const todayBtn = document.querySelector(".nav__dropdown--today");
+    // const weekBtn = document.querySelector(".nav__dropdown--week");
+    // const monthBtn = document.querySelector(".nav__dropdown--month");
+    // const yearBtn = document.querySelector(".nav__dropdown--year");
 
-    const innerText = () => {
-        navBtnText.innerText = t.innerText;
-    }
+    navBtnText.innerText = e.target.innerText;
 
-    if(t.classList.contains("nav__dropdown--today")) {
-        innerText();
-        todayBtn.classList.add("selected");
-        weekBtn.classList.remove("selected");
-        monthBtn.classList.remove("selected");
-        yearBtn.classList.remove("selected");
-        return;
-    } else if(t.classList.contains("nav__dropdown--week")) {
-        innerText();
-        todayBtn.classList.remove("selected");
-        weekBtn.classList.add("selected");
-        monthBtn.classList.remove("selected");
-        yearBtn.classList.remove("selected");
-        return;
-    } else if(t.classList.contains("nav__dropdown--month")) {
-        innerText();
-        todayBtn.classList.remove("selected");
-        weekBtn.classList.remove("selected");
-        monthBtn.classList.add("selected");
-        yearBtn.classList.remove("selected");
-        return;
-    } else if(t.classList.contains("nav__dropdown--year")) {
-        innerText();
-        todayBtn.classList.remove("selected");
-        weekBtn.classList.remove("selected");
-        monthBtn.classList.remove("selected");
-        yearBtn.classList.add("selected");
-        return;
-    } else {
-        innerText();
-        todayBtn.classList.remove("selected");
-        weekBtn.classList.remove("selected");
-        monthBtn.classList.remove("selected");
-        yearBtn.classList.remove("selected");
+    Array.from(navDropDownList.children).forEach((element) =>
+        element.classList.remove("selected")
+    );
+    e.target.classList.add("selected");
+
+    // const innerText = () => {
+    //     navBtnText.innerText = t.innerText;
+    // }
+
+    // if(t.classList.contains("nav__dropdown--today")) {
+    //     innerText();
+    //     todayBtn.classList.add("selected");
+    //     weekBtn.classList.remove("selected");
+    //     monthBtn.classList.remove("selected");
+    //     yearBtn.classList.remove("selected");
         
-    }
+    // } else if(t.classList.contains("nav__dropdown--week")) {
+    //     innerText();
+    //     todayBtn.classList.remove("selected");
+    //     weekBtn.classList.add("selected");
+    //     monthBtn.classList.remove("selected");
+    //     yearBtn.classList.remove("selected");
+    //     console.log("hi");
+    // } else if(t.classList.contains("nav__dropdown--month")) {
+    //     innerText();
+    //     todayBtn.classList.remove("selected");
+    //     weekBtn.classList.remove("selected");
+    //     monthBtn.classList.add("selected");
+    //     yearBtn.classList.remove("selected");
+        
+    // } else if(t.classList.contains("nav__dropdown--year")) {
+    //     innerText();
+    //     todayBtn.classList.remove("selected");
+    //     weekBtn.classList.remove("selected");
+    //     monthBtn.classList.remove("selected");
+    //     yearBtn.classList.add("selected");
+        
+    // } else {
+    //     todayBtn.classList.remove("selected");
+    //     weekBtn.classList.remove("selected");
+    //     monthBtn.classList.remove("selected");
+    //     yearBtn.classList.remove("selected");
+        
+    // }
         
 };
 

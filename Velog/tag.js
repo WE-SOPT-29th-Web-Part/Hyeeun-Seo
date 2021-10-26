@@ -14,9 +14,13 @@ input.addEventListener('keyup', (event) => {
 
         span.setAttribute("class", "tag");
         span.innerText = event.target.value;
+
+
         document.body.insertBefore(span,input);
 
-        tagArr.push(event.target.value)
+        const set = new Set(tagArr);
+        const uniqueArr = [...set]; 
+        uniqueArr.push(event.target.value)
         event.target.value = "";
     }
 });

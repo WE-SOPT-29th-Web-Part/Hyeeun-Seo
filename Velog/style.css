@@ -5,6 +5,7 @@ body {/*어떻게 하면 가로 스크롤 안생길 수 있을까*/
     display: flex;
     width: 100%;/*레이아웃 유연하게 지정*/
     flex-direction: column;
+
 }
 
 div {
@@ -277,7 +278,7 @@ nav {
     transition: .25s;
 }
 
-.selected {
+.nav__dropdown > li.selected {
     color: rgb(62, 194, 62);
 }
 
@@ -428,9 +429,3 @@ nav {
 .hidden {
     display: none;
 }
-/* 
-.visible {
-box-shadow: none;
-    transform: none;
-    transition: none;
-} */
