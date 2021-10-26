@@ -16,11 +16,11 @@ const navBtn = document.querySelector(".nav__period__btn");
 function onclickMenu() {
     const dp = document.querySelector('.nav__dropdown');
 
-    if(dp.style.display === 'none') {
-        dp.style.display = 'block';
-    } else {
+    if(dp.style.display === 'block') {
         dp.style.display = 'none';
-    }
+        return;
+    } 
+        dp.style.display = 'block';
 };
 
 navBtn.addEventListener("click", onclickMenu);
