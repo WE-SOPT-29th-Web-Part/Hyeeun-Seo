@@ -30,46 +30,97 @@ navBtn.addEventListener("click", onclickMenu);
 const navDropDownList = document.querySelector(".nav__dropdown");
 let navBtnText = document.querySelector(".nav__period--text");
 
-function clickDropDownList (e) {
+// function clickDropDownList (e) {
+//     const todayBtn = document.querySelector(".nav__dropdown--today");
+//     const weekBtn = document.querySelector(".nav__dropdown--week");
+//     const monthBtn = document.querySelector(".nav__dropdown--month");
+//     const yearBtn = document.querySelector(".nav__dropdown--year");
+    
+//     const target = e.target;
+
+//     const innerText = () => {
+//         navBtnText.innerText = target.innerText;
+//     }
+
+//     if (target.classList.contains("nav__dropdown--today")) {
+//         innerText();
+//         todayBtn.style.color = 'rgb(62, 194, 62)';
+//         weekBtn.style.color = 'black';
+//         monthBtn.style.color = 'black';
+//         yearBtn.style.color = 'black';
+//     } else if (target.classList.contains("nav__dropdown--week")) {
+//         innerText();
+//         weekBtn.style.color = 'rgb(62, 194, 62)';
+//         todayBtn.style.color = 'black';
+//         monthBtn.style.color = 'black';
+//         yearBtn.style.color = 'black';
+//     } else if (target.classList.contains("nav__dropdown--month")) {
+//         innerText();
+//         monthBtn.style.color = 'rgb(62, 194, 62)';
+//         todayBtn.style.color = 'black';
+//         weekBtn.style.color = 'black';
+//         yearBtn.style.color = 'black';
+//     } else if (target.classList.contains("nav__dropdown--year")) {
+//         innerText();
+//         yearBtn.style.color = 'rgb(62, 194, 62)';
+//         todayBtn.style.color = 'black';
+//         weekBtn.style.color = 'black';
+//         monthBtn.style.color = 'black';
+//     }
+    
+// }
+
+
+function clickDropDownList(e) {
     const todayBtn = document.querySelector(".nav__dropdown--today");
     const weekBtn = document.querySelector(".nav__dropdown--week");
     const monthBtn = document.querySelector(".nav__dropdown--month");
     const yearBtn = document.querySelector(".nav__dropdown--year");
     
-    const target = e.target;
-    console.log (target);
+    const t = e.target;
 
     const innerText = () => {
-        navBtnText.innerText = target.innerText;
+        navBtnText.innerText = t.innerText;
     }
 
-    if (target.classList.contains("nav__dropdown--today")) {
+    if(t.classList.contains("nav__dropdown--today")) {
         innerText();
-        todayBtn.style.color = 'rgb(62, 194, 62)';
-        weekBtn.style.color = 'black';
-        monthBtn.style.color = 'black';
-        yearBtn.style.color = 'black';
-    } else if (target.classList.contains("nav__dropdown--week")) {
+        todayBtn.classList.add("selected");
+        weekBtn.classList.remove("selected");
+        monthBtn.classList.remove("selected");
+        yearBtn.classList.remove("selected");
+        return;
+    } else if(t.classList.contains("nav__dropdown--week")) {
         innerText();
-        weekBtn.style.color = 'rgb(62, 194, 62)';
-        todayBtn.style.color = 'black';
-        monthBtn.style.color = 'black';
-        yearBtn.style.color = 'black';
-    } else if (target.classList.contains("nav__dropdown--month")) {
+        todayBtn.classList.remove("selected");
+        weekBtn.classList.add("selected");
+        monthBtn.classList.remove("selected");
+        yearBtn.classList.remove("selected");
+        return;
+    } else if(t.classList.contains("nav__dropdown--month")) {
         innerText();
-        monthBtn.style.color = 'rgb(62, 194, 62)';
-        todayBtn.style.color = 'black';
-        weekBtn.style.color = 'black';
-        yearBtn.style.color = 'black';
-    } else if (target.classList.contains("nav__dropdown--year")) {
+        todayBtn.classList.remove("selected");
+        weekBtn.classList.remove("selected");
+        monthBtn.classList.add("selected");
+        yearBtn.classList.remove("selected");
+        return;
+    } else if(t.classList.contains("nav__dropdown--year")) {
         innerText();
-        yearBtn.style.color = 'rgb(62, 194, 62)';
-        todayBtn.style.color = 'black';
-        weekBtn.style.color = 'black';
-        monthBtn.style.color = 'black';
+        todayBtn.classList.remove("selected");
+        weekBtn.classList.remove("selected");
+        monthBtn.classList.remove("selected");
+        yearBtn.classList.add("selected");
+        return;
+    } else {
+        innerText();
+        todayBtn.classList.remove("selected");
+        weekBtn.classList.remove("selected");
+        monthBtn.classList.remove("selected");
+        yearBtn.classList.remove("selected");
+        
     }
-    
-}
+        
+};
 
 navDropDownList.addEventListener("click", clickDropDownList);
 

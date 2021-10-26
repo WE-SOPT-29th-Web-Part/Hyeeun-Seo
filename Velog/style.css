@@ -264,6 +264,7 @@ nav {
     border-top: 1px solid black;
     width: 192px;
     padding: 8px;
+    color: black;
 }
 
 .nav__dropdown > li:nth-child(1) {
@@ -276,10 +277,7 @@ nav {
     transition: .25s;
 }
 
-.nav__dropdown--today.clicked,
-.nav__dropdown--week.clicked,
-.nav__dropdown--month.clicked,
-.nav__dropdown--year.clicked {
+.selected {
     color: rgb(62, 194, 62);
 }
 
