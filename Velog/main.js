@@ -65,6 +65,9 @@ function openModal (e){
         cardContent.append(cloneCard);
     }
 
+    cloneCard.style.transition = "none"; 
+    cloneCard.style.transform = "none"; 
+    cloneCard.style.boxShadow = "none"; 
     document.body.style.overflow = "hidden";
     modal.classList.remove("hidden");
 };
