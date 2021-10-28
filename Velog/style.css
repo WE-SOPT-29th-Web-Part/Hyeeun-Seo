@@ -39,7 +39,9 @@ header {
     .card {
         width: 40%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -49,7 +51,9 @@ header {
     .card {
         width: 30%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -59,7 +63,9 @@ header {
     .card {
         width: 20%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 40px;
         margin-right: 40px;
     }
