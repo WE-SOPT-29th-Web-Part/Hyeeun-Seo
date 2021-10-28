@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>    
 <body>
     <header>
         <h1 class="header__logo"> velog </h1>
@@ -20,7 +21,9 @@
                 <input type="checkbox">
                 <span class="header__switch--onoff"></span>
             </label>
-            <button class="header__new">새 글 작성</button>
+            <a href ="./newtag.html">
+                <button class="header__new">새 글 작성</button>
+            </a>
             <div class="header__profile">
                 <img class="header__img" src="cat.jpg">
             </div>
@@ -41,15 +44,17 @@
                 <span class="material-icons"> schedule</span>
                 최신
             </div>
-            <div class="nav__period">               
+            <div class="nav__period">
+                <span class="nav__period__btn">
                     <span class="nav__period--text">이번 주</span>
-                    <div class="nav__period--icon"></div>               
-                <div class="nav__dropdown">
-                    <div class="nav__dropdown--today">오늘</div>
-                    <div class="nav__dropdown--week">이번 주</div>
-                    <div class="nav__dropdown--month">이번 달</div>
-                    <div class="nav__dropdown--year">올해</div>
-                </div>
+                    <div class="nav__period--icon"></div>  
+                </span>                              
+                <ul class="nav__dropdown">
+                    <li class="nav__dropdown--today">오늘</li>
+                    <li class="nav__dropdown--week selected">이번 주</li>
+                    <li class="nav__dropdown--month">이번 달</li>
+                    <li class="nav__dropdown--year">올해</li>
+                </ul>
             </div>
         </div>
         <div class="nav__right">
@@ -58,7 +63,7 @@
             </span>
         </div>
     </nav>
-    <section class="cards">
+    <section class="cards ">
         <article class="card card1">
             <div class="card__img__wrapper">
                 <img class="card__img" src="헬로퓨처.jpg">
@@ -89,7 +94,7 @@
                     12.7K
                 </div>
             </div>
-        </article>
+        </article>        
         <article class="card card2">
             <div class="card__img__wrapper">
                 <img class="card__img" src="헬로퓨처.jpg">
@@ -401,5 +406,18 @@
             </div>
         </article>
     </section>
+    <div class="modal hidden ">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class = "modal__card__content">
+            </div>
+            <div class="modal__card__closebtn">
+                <span class="material-icons">
+                    highlight_off
+                </span>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="main.js"></script>
 </html>

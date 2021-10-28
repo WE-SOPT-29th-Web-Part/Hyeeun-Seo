@@ -1,11 +1,11 @@
-body {
+body {/*어떻게 하면 가로 스크롤 안생길 수 있을까*/
     box-sizing: border-box;
     background-color: rgb(228, 236, 247); 
     margin: auto;
     display: flex;
     width: 100%;/*레이아웃 유연하게 지정*/
     flex-direction: column;
-    width: 100%
+
 }
 
 div {
@@ -39,7 +39,9 @@ header {
     .card {
         width: 40%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -49,7 +51,9 @@ header {
     .card {
         width: 30%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -59,7 +63,9 @@ header {
     .card {
         width: 20%;
     }
-    body {
+    header,
+    nav,
+    section {
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -177,6 +183,7 @@ nav,
 }
 
 .header__profile--img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit:cover; 
@@ -184,7 +191,6 @@ nav,
 
 nav {
     display: flex;
-    /* margin: auto; */
 }
 
 .nav__left {
@@ -197,13 +203,13 @@ nav {
 .nav__trending,
 .nav__recent,
 .nav__period {
-    text-align: center;
     margin-right: 20px;
     cursor: pointer;
     height: 50px;
 }
 
 .nav__trending {
+    text-align: center;
     font-size: large;
     font-weight: bold;
     border-bottom: 2px solid black;
@@ -211,31 +217,75 @@ nav {
 }
 
 .nav__recent {
+    text-align: center;
     font-size: large;
     color: gray;
 }
 
-.nav__period {
+.nav__period{
     display: flex;
     background-color: rgb(214, 232, 240);
     align-items: center; 
-    justify-content: space-between;
     width: 100px;
     position: relative;
     padding: 4px 2px;
     cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
 }
 
-.nav__period--icon {
+.nav__period__btn {
+    padding-left: 10px;
+    padding-bottom: 6px;
+    /* align-items: center; 왜 여기 넣으면 안될까요*/
+    /*은근 맞지 않는 버튼의 위아래 폭 */
+}
+
+.nav__period--text {
+    font-weight: bold;
+}
+
+.nav__period--icon {/*아이콘 위치 고정 어떻게*/
     background-image: url('	https://velog-clone.netlify.app/assets/icons/arrow_drop_down.svg');
     width: 22px;
     height: 22px;
-    margin-left: 4px;
     display: inline-block;
+    position: fixed;
+    left: 323px;
+    top: 110px
 }
 
 .nav__dropdown {
     display: none;
+    position: absolute;
+    align-items: left; 
+    top: 100%;
+    list-style: none;
+    background-color: rgb(214, 232, 240);
+    z-index: 1;
+    padding-left: 0%;
+}
+
+
+.nav__dropdown > li {
+    border-top: 1px solid black;
+    width: 192px;
+    padding: 8px;
+    color: black;
+}
+
+.nav__dropdown > li:nth-child(1) {
+    border-top: none;
+}
+
+.nav__dropdown > li:hover {
+    color: rgb(62, 194, 62);
+    background-color: rgb(197, 214, 221);
+    transition: .25s;
+}
+
+.nav__dropdown > li.selected {
+    color: rgb(62, 194, 62);
 }
 
 .nav__right {
@@ -256,11 +306,13 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
+    min-width: 320px;
     background-color: rgb(214, 232, 240);
     margin: 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: .25s;
+    position: relative;
 }
 
 .card:hover {
@@ -275,10 +327,13 @@ nav {
 }
 
 .card__img{
-   object-fit: cover;
-   width: 100%;
-   height: 100%;
-   border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    object-fit: cover;
 }
 
 .card__middle {
@@ -303,18 +358,13 @@ nav {
     text-align: center; 
 }
 
-.card__img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover; 
-}
-
 .card__bottom {
     display: flex;
     justify-content: space-between;
     padding: 10px 16px;
-    height: 40px;
-
+    height: 25px;
+    /* align-items: baseline; 왜 이거하면 정렬이 안되는지 */
+    border-radius: 0 0 10px 10px;
 }
 
 .card__bottom--left {
@@ -322,7 +372,6 @@ nav {
     text-align: center;
     font-weight: lighter;
     font-size: 15px;
-    border-radius: 0 0 10px 10px;
 }
 
 .card__name span {
@@ -338,4 +387,51 @@ nav {
     flex-direction:row;
     display: flex;
     align-items: center;
+    font-size: 15px;
+}
+
+.modal {   
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__overlay {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+} 
+
+.modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    width: 350px;
+    height: auto;
+}    
+
+.modal__card__closebtn {
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    cursor: pointer;
+    transform: translate(50%, 150%);
+    color: white;
+}
+
+.modal__card__content {
+    margin-right: 0;
+}
+
+.hidden {
+    display: none;
 }
