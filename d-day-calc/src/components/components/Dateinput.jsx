@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 
 const Dateinput = ({year, month, date, setYear, setMonth, setDate}) => {
-//구조분해 할당 갱장히 중요해!
+//구조분해 할당 굉장히 중요해!
 //input 값이 변화하면 그 값을 바로 year로 바꾸어주기
     
     const handleChange = (e, setState) => {
         setState(e.target.value);
     };
 
+//버튼을 누르면 year, month, date에 오늘의 값 들어감
+    const printToday = () => {
+        //value year 에다가 useState 넣어주기
+        const 
+    }
+
     return (
         <div id="dateinput">
-            <button>오늘</button>
+            <button onClick={printToday}>
+                오늘
+            </button>
             <div>
                 <input 
                     type="text" 
