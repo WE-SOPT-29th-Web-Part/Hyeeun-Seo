@@ -6,6 +6,11 @@ import Header from './components/Header';
 import Result from './components/Result';
 
 function App() {
+  // DateInput에서 year, month, date을 Result로 가지고와서
+  // result의 input 값과 연산을 실시
+  // 무엇을 상태로 관리할 것이냐?
+  // year, month, date, inputValue, resultDate
+
   return (
     <div id="app">
       <Header />
