@@ -3,7 +3,8 @@ import React from 'react';
 const Result = () => {
     return (
         <div>
-            Result
+            <Text1 />
+            <Text2 />
         </div>
     );
 };

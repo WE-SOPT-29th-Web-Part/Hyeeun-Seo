@@ -7,7 +7,7 @@ import Result from './components/Result';
 
 function App() {
   return (
-    <div>
+    <div id="app">
       <Header />
       <Dateinput />
       <CenterText />

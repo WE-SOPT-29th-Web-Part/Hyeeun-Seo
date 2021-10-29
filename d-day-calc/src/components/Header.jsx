@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
     return (
         <div>
-            Header
+            D-day 계산기
         </div>
     )
 }
