@@ -1,5 +1,5 @@
 import './App.css';
-import CenterText from './components/CenterText';
+import CenterText from './components/CenterText.jsx';
 import Dateinput from './components/Dateinput';
 import Footer from './components/Footer';
 import Header from './components/Header';

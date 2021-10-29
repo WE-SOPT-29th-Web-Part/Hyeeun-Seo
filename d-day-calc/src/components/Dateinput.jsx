@@ -10,9 +10,11 @@ const Dateinput = ({year, month, date, setYear, setMonth, setDate}) => {
 
 //버튼을 누르면 year, month, date에 오늘의 값 들어감
     const printToday = () => {
-        //value year 에다가 useState 넣어주기
-        const 
+        setYear(new Date().getFullYear());
+        setMonth(new Date().getMonth()+1);
+        setDate(new Date().getDate());
     }
+
 
     return (
         <div id="dateinput">
