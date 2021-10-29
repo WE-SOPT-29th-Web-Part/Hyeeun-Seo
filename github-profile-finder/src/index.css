@@ -14,3 +14,7 @@ body,
 #root {
     background-color: rgb(27,29,33);
 }
+
+* {
+    box-sizing: border-box;
+}
