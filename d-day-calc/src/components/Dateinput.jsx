@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
-const Dateinput = () => {
-const [year, setYear] = useState(new Date().getFullYear());
-const [month, setMonth] = useState(new Date().getMonth()+1);
-const [date, setDate] = useState(new Date().getDate());
+const Dateinput = ({year, month, date, setYear, setMonth, setDate}) => {
+//구조분해 할당 갱장히 중요해!
 //input 값이 변화하면 그 값을 바로 year로 바꾸어주기
     
     const handleChange = (e, setState) => {
         setState(e.target.value);
-    }
+    };
 
     return (
         <div id="dateinput">
