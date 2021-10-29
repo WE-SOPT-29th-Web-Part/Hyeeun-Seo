@@ -17,6 +17,8 @@ const Text1 = ({year, month, date}) => {
         tempDate.setMonth(Number(month) -1);
         tempDate.setDate(Number(date) + Number(value) -1);
         //임시적인 날짜를 만들고, 그 날짜를 가공하여 resultDate에 넣어주기
+        const result = `${tempDate.getFullYear()}년 ${tempDate.getMonth()+1}월 ${tempDate.getDate()}일`;
+        setResultDate(result);
     };
     
     return (
