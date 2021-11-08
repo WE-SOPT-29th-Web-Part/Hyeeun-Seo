@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "axios": "^0.24.0",
+    "recoil": "^0.4.1",
+    "reset": "^0.1.0",
+    "reset-css": "^5.0.1",
     "styled-components": "^5.3.3"
   }
 }
