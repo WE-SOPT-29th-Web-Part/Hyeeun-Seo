@@ -12,7 +12,7 @@ function App() {
     <Root>
       <Header />
       <SearchBar setUserInfo={setUserInfo} />
-      <Result userInfo={userInfo} />
+      <Result userInfo={userInfo} setUserInfo={setUserInfo}/>
     </Root>
   );
   //SearchBar에서는 반환되는 값을 갱신해야해서 상태값 갱신 함수를 사용하는 거고

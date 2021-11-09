@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Result = ({ userInfo }) => {
+const Result = ({ userInfo, setUserInfo }) => {
     // 객체. <- 레퍼런스 타입. 참조타입. 값을 받아오는 것이 아니라, 주소를 받아온다.
     // 그래서 왜 userInfo가 빈 객체일 때를 못쓴다고?
     return userInfo.avatar_url ? (
         <Root>
-            <button>닫기</button>
+            <button onClick={()=> setUserInfo({})}>닫기</button>
             <img src={userInfo.avatar_url} alt="" />
             <h3>{userInfo.name}</h3>
             <h4>{userInfo.login}</h4>
             <p>{userInfo.bio}</p>
-            <a href={userInfo.url}>Visit Github</a>
+            <a href={userInfo.html_url} target="_blank">Visit Github</a>
             <Ul>
                 <li>
                     <strong>Followers</strong>
@@ -45,6 +45,22 @@ const Root = styled.article`
     background-color: rgb(44,48,53);
     border-radius: 20px;
     position: relative;
+    animation: slideDown 400ms ease-in 0s 1 normal forwards;
+    //transition (간단한 애니메이션을 구현할 때)
+    // animation (세부적인 동작을 구현하고 싶을 때)
+    // keyframes 정의
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+    }
+
     //styled-components의 장점 - 중첩 스타일링이 가능
     // 자기 선택 문자 -> 근데... 이거... 아까랑 같은거 아님?
     & > button {

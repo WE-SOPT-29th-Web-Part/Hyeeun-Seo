@@ -26,6 +26,7 @@ const handleSubmit = async (e) => {//submit를 하면 기본적으로 새로고�
     // 서버에서 받아온 데이터 중, data 프로퍼티를 data라는 이름으로 저장할게
     // 그럼 프로퍼티와 저장되는 이름은 항상 같은 건가요?
     setUserInfo(data);
+    setUser("");
 };
 
 
