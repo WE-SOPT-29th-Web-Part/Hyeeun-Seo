@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Result from './components/Result';
+import Result2 from './components/Result2';
 import SearchBar from './components/SearchBar';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ function App() {
     <Root>
       <Header />
       <SearchBar setUserInfo={setUserInfo} />
-      <Result userInfo={userInfo} setUserInfo={setUserInfo}/>
+      <Result2 userInfo={userInfo} setUserInfo={setUserInfo}/>
     </Root>
   );
   //SearchBar에서는 반환되는 값을 갱신해야해서 상태값 갱신 함수를 사용하는 거고

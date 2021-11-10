@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Result = ({ userInfo, setUserInfo }) => {
     // 객체. <- 레퍼런스 타입. 참조타입. 값을 받아오는 것이 아니라, 주소를 받아온다.
     // 그래서 왜 userInfo가 빈 객체일 때를 못쓴다고?
-    return userInfo.avatar_url ? (
+    return  (
         <Root>
             <button onClick={()=> setUserInfo({})}>닫기</button>
             <img src={userInfo.avatar_url} alt="" />
@@ -27,9 +27,6 @@ const Result = ({ userInfo, setUserInfo }) => {
                 </li>
             </Ul>
         </Root>
-    ) : (
-        <></>
-        // 태그가 없는 태그. 명목상 구분자 역할을 하는 녀석.
     );
 };
 
