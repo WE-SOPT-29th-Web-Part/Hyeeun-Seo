@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArticleFooter = () => {
+const ArticleTags = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ArticleFooter = () => {
     );
 };
 
-export default ArticleFooter;
+export default ArticleTags;
