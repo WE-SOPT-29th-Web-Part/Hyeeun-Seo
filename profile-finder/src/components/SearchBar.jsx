@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useGetRecoilValueInfo_UNSTABLE } from 'recoil';
 import styled from 'styled-components';
 
 const SearchBar = ({setUserInfo}) => {
@@ -13,19 +14,32 @@ const SearchBar = ({setUserInfo}) => {
     // 굳이 이렇게 하는 이유는 하나의 태그에 하나의 이벤트만 주기위해?
 const handleSubmit = async (e) => {//submit를 하면 기본적으로 새로고침이 됨
     e.preventDefault();
-    // user 값을 이용하여 정보를 받아오자.
-    // 서버에 있는 데이터를 받아오는 방법 -> 온라인에 올라와있는 데이터를 받아오자.
-    // 서버 통신이 필요하다. -> 서버 통신에는 받아오는데 시간이 걸린다. -> 비동기다 (예?)
-    // 비동기 처리를 하기 위한 방법 -> async await
-    // axios는 서버통신을 도와주는 툴
-    // get은 받아온다는 의미, REST API의 한 종류
-
+    setUserInfo((currentUserInfo) = > ({
+        ...currentUserInfo, 
+        status: "pending"
+    }));
+    // 이걸 왜 currentUserInfo로 바꿔줄 수 있는지?
+    // 현재의 status의 data 값을 풀어헤치고, status만 pending으로 바꿔줌.
+    // pending - 데이터를 받아오는 상태로 이동 중이다.
+    // 소괄호는 return문을 대신, 중괄호는 객체를 형성한다는 뜻
+   
+   // 에러처리 - async / await -> try, catch
+    try {
     const {data} = await axios.get(`https://api.github.com/users/${user}`);
     // 값을 동적으로 바꿔주고 싶을 때 setUser을 사용, 값 자체를 가져올 때는 user 사용?
     // 구조분해할당
     // 서버에서 받아온 데이터 중, data 프로퍼티를 data라는 이름으로 저장할게
     // 그럼 프로퍼티와 저장되는 이름은 항상 같은 건가요?
+    setUserInfo(currentUserInfo => ({
+        ...currentUserInfo, 
+        data, //key와 value가 같을 때 
+        status: "resolved", // 받아오는 데 성공한 상태
+    }));
     setUserInfo(data);
+    } catch (error) {
+        console.log(error);
+    }
+
     setUser("");
 };
 

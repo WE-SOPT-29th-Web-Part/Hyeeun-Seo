@@ -7,7 +7,10 @@ import styled from 'styled-components';
 
 
 function App() {
-  const [userInfo, setUserInfo] = useState({});//user와 userInfo 차이를 잘 몰겠네
+  const [userInfo, setUserInfo] = useState({ data: null, status: "idle" });//user와 userInfo 차이를 잘 몰겠네
+  // api 통신 상태에 따른 분기처리
+  // userInfo - 유저의 정보를 받아옴.
+  // idle - 아무 데이터도 받아오지 않은 상태, 기본적인 상태
   return (
     <Root>
       <Header />
