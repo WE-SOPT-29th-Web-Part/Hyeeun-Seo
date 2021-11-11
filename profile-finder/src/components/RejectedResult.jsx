@@ -13,5 +13,7 @@ export default RejectedResult;
 
 const Root = styled.div`
     color: white;
-    font-size: 32px;
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: lighter;
 `;
