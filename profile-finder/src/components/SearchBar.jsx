@@ -1,19 +1,17 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useGetRecoilValueInfo_UNSTABLE } from 'recoil';
 import styled from 'styled-components';
 
 const SearchBar = ({setUserInfo}) => {
     const [user, setUser] = useState("");
     const handleChange = (e) => {
         setUser(e.target.value);
-
 };
     //이 값을 submit 했을 때, 검색이 되도록
     //input 태그를 form 태그로 감싸고, onSubmit 이벤트를 사용하는 것
     // 굳이 이렇게 하는 이유는 하나의 태그에 하나의 이벤트만 주기위해?
-const handleSubmit = async (e) => {//submit를 하면 기본적으로 새로고침이 됨
-    e.preventDefault();
+const handleSubmit = async (e) => {
+    e.preventDefault();//submit를 하면 기본적으로 새로고침이 됨
     setUserInfo((currentUserInfo) => ({
         ...currentUserInfo, 
         status: "pending"
@@ -38,16 +36,14 @@ const handleSubmit = async (e) => {//submit를 하면 기본적으로 새로고�
         // 실패했을 때의 상태
         setUserInfo(currentUserInfo => ({
             ...currentUserInfo, 
-            data: null, //key와 value가 같을 때 
-            status: "rejected", // 받아오는 데 성공한 상태
+            data: null,  
+            status: "rejected", // 받아오는 데 실패한 상태
         }));
         console.log(error);
         }
-
         setUser("");
     };
     // 상태를 정의
-
 
     return (
         <form onSubmit={handleSubmit}>

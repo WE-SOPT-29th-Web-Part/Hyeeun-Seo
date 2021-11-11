@@ -43,7 +43,7 @@ const Root = styled.article`
     border-radius: 20px;
     position: relative;
     animation: slideDown 400ms ease-in 0s 1 normal forwards;
-    //transition (간단한 애니메이션을 구현할 때)
+    // transition (간단한 애니메이션을 구현할 때)
     // animation (세부적인 동작을 구현하고 싶을 때)
     // keyframes 정의
     @keyframes slideDown {

@@ -13,7 +13,6 @@ const Root = styled.div`
     border: 5px solid gold;
     border-color: gold transparent transparent;
     border-radius: 50%;
-    /* margin-top: 15px; */
     animation: spin 1s linear;
 
     @keyframes spin {
