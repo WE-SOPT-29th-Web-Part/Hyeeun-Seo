@@ -68,10 +68,11 @@ const StyledSection = styled.section`
     border-right: 1px solid lightslategray;
 
     & > h2 {
+        display: block;
         font-weight: bold;
-        font-size: 23px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        font-size: 24px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     &.open {
@@ -84,8 +85,9 @@ const StyledSection = styled.section`
 const StyledTodoList = styled.ul`
     margin: 0;
     width: 100%;
-    flex: 1;
     padding: 0 20px;
+    display: block;
+
 
     li {
         flex-grow: 1;
@@ -129,12 +131,15 @@ const StyledInput = styled.input`
 const StyledBtnWrapper  = styled.div`
     width: 100%;
     text-align: center;
-    cursor: pointer;
     padding-top: 3px;
     padding-bottom: 3px;
 
     & > button {
-        border: 0.5px solid gray;
+        border: none;
         border-radius: 50%;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        font-size: 17px;
     }
 `;

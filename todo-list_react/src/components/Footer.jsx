@@ -13,7 +13,7 @@ export default Footer;
 
 const StyledFooter = styled.div`
     width: 100%;
-    background-color: rgba(176, 255, 111, 0.473);
+    background-color: rgba(101, 150, 61, 0.473);
     color: white;
     text-align: center;
     height: 50px;
