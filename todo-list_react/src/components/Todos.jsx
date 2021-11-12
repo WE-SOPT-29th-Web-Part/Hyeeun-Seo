@@ -29,7 +29,7 @@ const Todos = ({dateType}) => {
     }
 
     return (
-        <StyledSection>
+        <StyledSection className={viewType}>
             <h2>{dateType} 할 일</h2>
             <StyledTodoList>
                 [...itemSet].map((item) => (
@@ -53,3 +53,4 @@ const Todos = ({dateType}) => {
 };
 
 export default Todos;
+
