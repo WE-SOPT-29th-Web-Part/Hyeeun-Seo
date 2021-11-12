@@ -1,15 +1,17 @@
+import { useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Navigator from './components/Navigator';
-import Todos from './components/Todos';
+import Main from './components/Main';
+import NavBar from './components/NavBar';
 
 function App() {
+  const [view, setView] = useState('both');
   return (
     <div> 
       <Header />
-      <Navigator />
-      <Todos />
+      <NavBar setView={setView}/>
+      <Main view={view}/>
       <Footer />
     </div>
   );

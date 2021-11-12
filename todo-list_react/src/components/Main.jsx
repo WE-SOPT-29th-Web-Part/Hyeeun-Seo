@@ -15,17 +15,18 @@ const Main = ({ view }) => {
             return (
                 <StyledMain>
                     <Todos dateType={'오늘'} />
-                    <Todos dateType={'내일'} viewType='visible'/>
+                    <Todos dateType={'내일'} viewType='visible' />
                 </StyledMain>
             );
         case 'both':
         default:
             return (
                 <StyledMain>
-                    <Todos dateType={'오늘'} viewType='visible'/>
-                    <Todos dateType={'내일'} viewType='visible'/>
+                    <Todos dateType={'오늘'} viewType='visible' />
+                    <Todos dateType={'내일'} viewType='visible' />
                 </StyledMain>
             );
+
     }
     
 };
