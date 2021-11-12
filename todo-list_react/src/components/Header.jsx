@@ -19,4 +19,5 @@ const StyledHeader = styled.div`
     height: 50px;
     line-height: 50px;
     font-size: 32px;
+    font-weight: bold;
 `;

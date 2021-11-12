@@ -69,7 +69,7 @@ const StyledSection = styled.section`
 
     & > h2 {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 23px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -84,10 +84,11 @@ const StyledSection = styled.section`
 const StyledTodoList = styled.ul`
     margin: 0;
     width: 100%;
-    flex-grow: 1;
+    flex: 1;
     padding: 0 20px;
 
     li {
+        flex-grow: 1;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -100,15 +101,16 @@ const StyledTodoList = styled.ul`
             height: 35px;
             line-height: 35px;
             display: inline-block;
-            height: 35px;
-            line-height: 35px;
+            font-size: 15px;
         }
 
         & > button {
-            background: transparent url()(${deleteBtn});
+            background: url(${deleteBtn});
             border: 0;
             outline: 0;
             cursor: pointer;
+            width: 17px;
+            height: 16px;
         }
 
     }
@@ -119,13 +121,20 @@ const StyledInput = styled.input`
     width: 100%;
     outline: 0;
     border: 0;
-    width: 100%;
-    border: 0;
-    outline: 0;
+    margin-top: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 `;
 
 const StyledBtnWrapper  = styled.div`
     width: 100%;
     text-align: center;
     cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    & > button {
+        border: 0.5px solid gray;
+        border-radius: 50%;
+    }
 `;
