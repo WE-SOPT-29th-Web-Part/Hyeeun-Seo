@@ -6,7 +6,7 @@ import Main from './components/Main';
 import NavBar from './components/NavBar';
 
 function App() {
-  const [view, setView] = useState('both');
+  const [view, setView] = useState('');
   return (
     <div> 
       <Header />

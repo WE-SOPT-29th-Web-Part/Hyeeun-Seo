@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import deleteBtn from '../assets/trash-can.svg';
 
 const Todos = ({dateType, viewType}) => {
     const[todo, setTodo] = useState('');
@@ -21,7 +22,7 @@ const Todos = ({dateType, viewType}) => {
     }
 
     const handleKeyPress = (e) => {
-        if (e.key === 'enter') addList();
+        if (e.key === 'Enter') addList();
     }
 
     const handleAddBtn = () => {
@@ -37,7 +38,6 @@ const Todos = ({dateType, viewType}) => {
                         <li key={item} id={item}>
                             <span>{item}</span>
                             <button onClick={handleDeleteBtn}>
-                                <img src="./assets/trash-can.svg" />
                             </button>
                         </li>
                     ))
@@ -62,10 +62,17 @@ const StyledSection = styled.section`
     display: flex;
     flex-direction:column;
     align-items: center;
-    width: 0px;
+    width: 0;
     visibility: hidden;
     transition: width 300ms ease-in;
     border-right: 1px solid lightslategray;
+
+    & > h2 {
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
     &.open {
         width: 100%;
@@ -77,18 +84,15 @@ const StyledSection = styled.section`
 const StyledTodoList = styled.ul`
     margin: 0;
     width: 100%;
-    flex: 1;
+    flex-grow: 1;
     padding: 0 20px;
 
-    & > li {
-        list-style: none;
+    li {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         border-bottom: 1px solid lightgray;
-        flex-grow: 1;
-        width: 100%;
         padding: 0 20px;
 
         & > span {
@@ -101,7 +105,7 @@ const StyledTodoList = styled.ul`
         }
 
         & > button {
-            background-color: transparent;
+            background: transparent url()(${deleteBtn});
             border: 0;
             outline: 0;
             cursor: pointer;
