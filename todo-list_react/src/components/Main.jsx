@@ -32,3 +32,10 @@ const Main = ({ view }) => {
 };
 
 export default Main;
+
+const StyledMain = styled.main`
+    flex: 1;
+    width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+`;
