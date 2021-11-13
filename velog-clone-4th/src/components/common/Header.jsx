@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
+        <StyledHeader>
             <StyledLeft>sopt.log</StyledLeft>
             <StyledRight>
                 <Link to="/write">
@@ -12,16 +12,30 @@ const Header = () => {
                     {/* 이걸 누르면 write 페이지로 이동 */}
                 </Link>
             </StyledRight>
-        </div>
+        </StyledHeader>
     );
 };
 
 export default Header;
 
-const StyledLeft = styled.div`
+const StyledHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
 
+const StyledLeft = styled.div`
+    font-weight: bold;
+    font-size: 30px;
 `;
 
 const StyledRight = styled.div`
+    
+    Link {
 
+    
+        & > button {
+            padding: 15px 30px;
+        }
+    }
+    
 `;
