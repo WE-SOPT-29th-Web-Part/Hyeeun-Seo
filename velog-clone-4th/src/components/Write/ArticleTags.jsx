@@ -10,7 +10,7 @@ const ArticleTags = ({tags, articleData, setArticleData}) => {
 
 
             setArticleData(tempData);
-            // setState는 비동기
+            // setState는 비동기no
             e.target.value = "";
             // 스프레드 연산자를 잘 이해하고 있는가.
         }
