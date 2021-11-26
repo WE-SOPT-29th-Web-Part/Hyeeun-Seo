@@ -7,7 +7,7 @@ import dropDown from "../../assets/icons/drop_down.svg";
 
 const Header = () => {
   return (
-    <StyledHeader>
+    <StyledRoot>
       <StyledLeft>sopt.log</StyledLeft>
       <StyledRight>
         <img src={searchBtn} alt="" />
@@ -18,25 +18,59 @@ const Header = () => {
         <img src={profile} alt="Profile img" />
         <img src={dropDown} alt="" />
       </StyledRight>
-    </StyledHeader>
+    </StyledRoot>
   );
 };
 
 export default Header;
 
-const StyledHeader = styled.div`
+const StyledRoot = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 20px 30px 100px 25px;
 `;
 
 const StyledLeft = styled.div`
   font-weight: bold;
   font-size: 30px;
   letter-spacing: -2px;
+  cursor: pointer;
 `;
 
 const StyledRight = styled.div`
-  & > button {
-    padding: 15px 30px;
+  display: flex;
+  align-items: center;
+
+  button {
+    width: 97px;
+    height: 32px;
+    border-radius: 16px;
+    font-weight: bolder;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: whitesmoke;
+  }
+
+  button:hover {
+    background-color: black;
+    color: whitesmoke;
+  }
+
+  img {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  img:nth-child(1) {
+    margin-left: 0;
+  }
+
+  img:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
   }
 `;

@@ -23,7 +23,7 @@ const ArticleCard = ({ article }) => {
 export default ArticleCard;
 
 const StyledCard = styled.section`
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(230, 230, 230);
   padding: 5px;
   margin: 40px auto;
   width: 782px;
@@ -58,7 +58,7 @@ const StyledTag = styled.span`
   color: rgb(105, 207, 156);
   font-weight: bolder;
   border-radius: 20px;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(255, 255, 255);
   padding: 5px 10px;
   margin: 10px;
 `;

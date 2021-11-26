@@ -3,6 +3,7 @@ import Header from "../components/common/Header";
 import Profile from "../components/Home/Profile";
 import HomeNav from "../components/Home/HomeNav";
 import ArticlesContainer from "../components/Home/ArticlesContainer";
+import styled from "styled-components";
 
 const Home = () => {
   // get과 post
