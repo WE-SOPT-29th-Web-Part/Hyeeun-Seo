@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import searchBtn from "../../assets/icons/searchBtn.svg";
+import profile from "../../assets/images/헬로퓨처.jpg";
+import dropDown from "../../assets/icons/drop_down.svg";
 
 const Header = () => {
   return (
@@ -13,6 +15,8 @@ const Header = () => {
           <button>새 글 작성</button>
           {/* 이걸 누르면 write 페이지로 이동 */}
         </Link>
+        <img src={profile} alt="Profile img" />
+        <img src={dropDown} alt="" />
       </StyledRight>
     </StyledHeader>
   );

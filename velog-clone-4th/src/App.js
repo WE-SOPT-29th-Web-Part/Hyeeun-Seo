@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Write from "./pages/Write";
 import SeriesCategory from "./pages/SeriesCategory";
+import styled from "styled-components";
 
 function App() {
   // 1. 페이지 라우팅 - react-router-dom
