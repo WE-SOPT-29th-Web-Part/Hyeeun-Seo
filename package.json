@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.24.0",
+    "react-router-dom": "^6.0.2",
     "recoil": "^0.4.1",
     "reset": "^0.1.0",
     "reset-css": "^5.0.1",

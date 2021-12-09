@@ -14,7 +14,7 @@ const Article = () => {
     <div>
       <Header />
       <h1>{title}</h1>
-      <ArticleOptions id={id} />
+      <ArticleOptions />
       <div>
         <span>서혜은</span>
         <span>.</span>
