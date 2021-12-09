@@ -42,22 +42,22 @@ const Write = () => {
     // value: e.target.value
     const tempArticleData = { ...articleData };
     // 객체 복사 -> 상태는 불변성을 유지해야 한다. 상태 불변성
-    // 대괄호 안에 키를 넣어야 변수로 사용가능
+    // 대괄호 안에 키를 넣어야 value 변수로 tempArticleData 객체 속성 조회 가능
     tempArticleData[key] = value;
     setArticleData(tempArticleData);
   };
   // 배열(tags)를 수정하기 위한 함수
-  const handleArrdataChange = (key, value) => {
+  const handleArrDataChange = (key, value) => {
     const tempArticleData = { ...articleData };
     tempArticleData[key] = [...tempArticleData[key], value];
     setArticleData(tempArticleData);
   };
 
   const handleArrDataRemove = (key, value) => {
-    const tempArticleData = { ...articleDat a };
+    const tempArticleData = { ...articleData };
     // filter
-    tempArticleData[key] = tempArticleData[key].filter((el) => el != vlaue);
-    // vlaue -> 클릭된 태그 속에 있는 글자
+    tempArticleData[key] = tempArticleData[key].filter((el) => el !== value);
+    // value -> 클릭된 태그 속에 있는 글자
     setArticleData(tempArticleData);
   };
 
@@ -68,7 +68,7 @@ const Write = () => {
       <ArticleTags
         tags={articleData.tags}
         articleData={articleData}
-        onArrDataChange={handleArrdataChange}
+        onArrDataChange={handleArrDataChange}
         onArrDataRemove={handleArrDataRemove}
       />
       <ArticleBody onDataChange={handleDataChange} />

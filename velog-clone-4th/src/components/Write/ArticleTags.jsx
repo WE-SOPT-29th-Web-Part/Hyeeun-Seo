@@ -3,12 +3,13 @@ import React from "react";
 const ArticleTags = ({
   tags,
   articleData,
-  onArrdataChange,
+  onArrDataChange,
   onArrDataRemove,
 }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      onArrdataChange("tags", e.target.value);
+      onArrDataChange("tags", e.target.value);
+      e.target.value = "";
     }
   };
 
@@ -16,7 +17,7 @@ const ArticleTags = ({
     <div>
       {tags.map((tag) => (
         <span key={tag} onClick={(e) => onArrDataRemove("tags", tag)}>
-          {tag}{" "}
+          {tag}
         </span>
       ))}
       {/*엔터 칠 때마다 tag에 추가되도록 */}
