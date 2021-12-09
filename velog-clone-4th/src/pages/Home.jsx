@@ -4,6 +4,7 @@ import Profile from "../components/Home/Profile";
 import HomeNav from "../components/Home/HomeNav";
 import ArticlesContainer from "../components/Home/ArticlesContainer";
 import styled from "styled-components";
+import { Routes, Route } from "react-router-dom";
 
 const Home = () => {
   // get과 post

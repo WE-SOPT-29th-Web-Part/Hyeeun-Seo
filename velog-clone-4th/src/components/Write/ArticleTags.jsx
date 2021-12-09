@@ -1,24 +1,23 @@
 import React from "react";
 
-const ArticleTags = ({ tags, articleData, setArticleData }) => {
+const ArticleTags = ({
+  tags,
+  articleData,
+  onArrdataChange,
+  onArrDataRemove,
+}) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      //input에 들어간 내용을 tag로 추가시킬게
-      const tempData = { ...articleData };
-      // 불변성 유지
-      tempData.tags = [...tempData.tags, e.target.value];
-
-      setArticleData(tempData);
-      // setState는 비동기no
-      e.target.value = "";
-      // 스프레드 연산자를 잘 이해하고 있는가.
+      onArrdataChange("tags", e.target.value);
     }
   };
 
   return (
     <div>
       {tags.map((tag) => (
-        <span key={tag}>{tag} </span>
+        <span key={tag} onClick={(e) => onArrDataRemove("tags", tag)}>
+          {tag}{" "}
+        </span>
       ))}
       {/*엔터 칠 때마다 tag에 추가되도록 */}
       <input type="text" onKeyPress={handleKeyPress} />

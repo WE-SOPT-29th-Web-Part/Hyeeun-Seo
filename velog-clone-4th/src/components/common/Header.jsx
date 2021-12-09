@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import searchBtn from "../../assets/icons/searchBtn.svg";
+import { ReactComponent as searchBtn } from "../../assets/icons/searchBtn.svg";
+import { ReactComponent as dropDown } from "../../assets/icons/drop_down.svg";
 import profile from "../../assets/images/헬로퓨처.jpg";
-import dropDown from "../../assets/icons/drop_down.svg";
+import { useHistory, useNavigate } from "react-router";
 
 const Header = () => {
   return (

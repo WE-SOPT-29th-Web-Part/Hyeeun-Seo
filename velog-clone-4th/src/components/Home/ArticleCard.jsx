@@ -1,28 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ArticleCard = ({ article }) => {
   // 구조 분해 할당
-  const { id, title, body, summary, series, tags, thumbnail, date } = article;
+  const { title, summary, tags, thumbnail, date } = article;
 
   return (
-    <StyledCard>
-      <StyledImgWrapper>
-        <img src={thumbnail} alt="" />
-      </StyledImgWrapper>
-      <StyledTitle>{title}</StyledTitle>
-      <StyledSummary>{summary}</StyledSummary>
-      {tags.map((tag) => (
-        <StyledTag key={tag}>{tag}</StyledTag>
-      ))}
-      <StyledDate>{date}</StyledDate>
-    </StyledCard>
+    <StyledRoot>
+      <Link to={`article/${article.id}`} state={article}>
+        {thumbnail && (
+          <StyledImgWrapper ratio="56%">
+            <img src={thumbnail} alt="thumbnail" />
+          </StyledImgWrapper>
+        )}
+        <h3>{title}</h3>
+      </Link>
+      <p>{summary}</p>
+      <StyledTag>
+        {tags && tags.map((tag) => <span key={tag}>{tag}</span>)}
+      </StyledTag>
+      <span>{date}</span>
+    </StyledRoot>
   );
 };
 
 export default ArticleCard;
 
-const StyledCard = styled.section`
+const StyledRoot = styled.section`
   background-color: rgb(230, 230, 230);
   padding: 5px;
   margin: 40px auto;

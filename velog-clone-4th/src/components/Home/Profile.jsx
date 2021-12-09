@@ -3,11 +3,7 @@ import profile from "../../assets/images/헬로퓨처.jpg";
 import accountBtn from "../../assets/icons/account_circle.svg";
 import homeBtn from "../../assets/icons/home.svg";
 import favoriteBtn from "../../assets/icons/favorite.svg";
-
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-></link>;
+import styled from "styled-components";
 
 const Profile = () => {
   return (
