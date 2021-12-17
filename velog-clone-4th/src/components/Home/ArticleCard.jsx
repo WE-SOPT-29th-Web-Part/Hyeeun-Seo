@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { colors } from "../../libs/constants/colors";
+import ImgWrapper from "../common/ImgWrapper";
 
 const ArticleCard = ({ article }) => {
-  // 구조 분해 할당
-  const { title, summary, tags, thumbnail, date } = article;
-
+  const { id, title, body, summary, series, tags, thumbnail, date } = article;
   return (
     <StyledRoot>
       <Link to={`article/${article.id}`} state={article}>
         {thumbnail && (
-          <StyledImgWrapper ratio="56%">
+          <ImgWrapper ratio="56%">
             <img src={thumbnail} alt="thumbnail" />
-          </StyledImgWrapper>
+          </ImgWrapper>
         )}
         <h3>{title}</h3>
       </Link>
@@ -27,50 +27,35 @@ const ArticleCard = ({ article }) => {
 
 export default ArticleCard;
 
-const StyledRoot = styled.section`
-  background-color: rgb(230, 230, 230);
-  padding: 5px;
-  margin: 40px auto;
-  width: 782px;
-`;
-
-const StyledImgWrapper = styled.div`
-  display: block;
-  overflow: hidden;
-  height: 450px;
-  width: 782px;
-
-  & > img {
-    width: 100%;
-    margin-top: -20%;
+const StyledRoot = styled.article`
+  width: 100%;
+  color: ${colors.lightGray};
+  padding-bottom: 64px;
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  p {
+    margin-bottom: 32px;
+  }
+  & > span {
+    color: ${colors.dateGray};
+    font-size: 14px;
   }
 `;
 
-const StyledTitle = styled.h3`
-  font-weight: bolder;
-  margin-bottom: 0;
-`;
-
-const StyledSummary = styled.h4`
-  font-weight: lighter;
-  font-size: 14px;
-  margin-top: 10px;
-`;
-
-const StyledTag = styled.span`
-  margin: 13px 20px;
-  justify-content: center;
-  color: rgb(105, 207, 156);
-  font-weight: bolder;
-  border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  padding: 5px 10px;
-  margin: 10px;
-`;
-
-const StyledDate = styled.div`
-  color: #979797;
-  font-size: 13px;
-  font-weight: bolder;
-  margin: 15px 0 5px 5px;
+export const StyledTag = styled.div`
+  margin-bottom: 16px;
+  & > span {
+    display: inline-block;
+    padding: 0 16px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 14px;
+    background-color: ${colors.tagGray};
+    color: ${colors.subGreen};
+    border-radius: 16px;
+    cursor: pointer;
+  }
 `;

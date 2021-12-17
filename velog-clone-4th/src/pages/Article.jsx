@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router";
 import Header from "../components/common/Header";
-import Profile from "../components/Home/Profile";
-import ArticleOptions from "../components/Home/ArticleOptions";
+import Profile from "../components/home/Profile";
+import ArticleOptions from "../components/home/ArticleOptions";
 import ImgWrapper from "../components/common/ImgWrapper";
 
 const Article = () => {

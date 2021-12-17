@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ArticleBody from "../components/Write/ArticleBody";
-import ArticleFooter from "../components/Write/ArticleFooter";
-import ArticleTags from "../components/Write/ArticleTags";
-import ArticleTitle from "../components/Write/ArticleTitle";
+import ArticleBody from "../components/write/ArticleBody";
+import ArticleFooter from "../components/write/ArticleFooter";
+import ArticleTags from "../components/write/ArticleTags";
+import ArticleTitle from "../components/write/ArticleTitle";
 import { client } from "../libs/api";
 
 const Write = () => {

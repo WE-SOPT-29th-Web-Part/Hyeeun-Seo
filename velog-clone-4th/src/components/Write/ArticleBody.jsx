@@ -1,14 +1,22 @@
 import React from "react";
+import styled from "styled-components";
 
-const ArticleBody = ({ onDataChange }) => {
-  // const handleChange = (e) => {
-  //   setArticleData((articleData) => ({
-  //     ...articleData, //id, body, summary 등 프로퍼티를 펼쳐줌, spread 연산자
-  //     body: e.target.value, //펼친 녀석들 중 title의 value를 e.target.value로 바꿔줄게
-  //   }));
-  // };
-
-  return <textarea onChange={(e) => onDataChange("body", e.target.value)} />;
+const ArticleBody = ({ handleDataChange, body }) => {
+  return (
+    <StyledTextarea
+      value={body}
+      placeholder="당신의 이야기를 적어보세요..."
+      onChange={(e) => handleDataChange("body", e.target.value)}
+    ></StyledTextarea>
+  );
 };
 
 export default ArticleBody;
+
+const StyledTextarea = styled.textarea`
+  flex: 1;
+  width: 50%;
+  white-space: pre-wrap;
+  padding: 0 48px;
+  font-size: 18px;
+`;
