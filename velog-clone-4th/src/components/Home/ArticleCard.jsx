@@ -5,7 +5,7 @@ import { colors } from "../../libs/constants/colors";
 import ImgWrapper from "../common/ImgWrapper";
 
 const ArticleCard = ({ article }) => {
-  const { id, title, body, summary, series, tags, thumbnail, date } = article;
+  const { title, summary, tags, thumbnail, date } = article;
   return (
     <StyledRoot>
       <Link to={`article/${article.id}`} state={article}>

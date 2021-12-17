@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import profileImg from "../../assets/images/sopt_web.png";
+import profileImg from "../../assets/images/헬로퓨처.jpg";
 import { colors } from "../../libs/constants/colors";
 import { ReactComponent as GithubIcon } from "../../assets/icons/github.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
@@ -12,16 +12,16 @@ const Profile = () => {
       <StyledProfile>
         <img src={profileImg} alt="profile" />
         <div>
-          <h3>김의진</h3>
+          <h3>서혜은</h3>
           <h4>안녕하세요.</h4>
         </div>
       </StyledProfile>
       <StyledCenterLine></StyledCenterLine>
       <StyledContact>
-        <a href="https://github.com/euijinkk" target="blank">
+        <a href="https://github.com/henization" target="blank">
           <GithubIcon fill="lightGray" />
         </a>
-        <a href="https://www.speechtime.co.kr/" target="blank">
+        <a href="https://blog.naver.com/shy6295" target="blank">
           <HomeIcon fill="lightGray" />
         </a>
         <a href="/">

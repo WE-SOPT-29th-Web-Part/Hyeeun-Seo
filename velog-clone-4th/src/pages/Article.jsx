@@ -1,28 +1,32 @@
 import React from "react";
 import { useLocation } from "react-router";
+import ArticleOptions from "../components/article/ArticleOptions";
 import Header from "../components/common/Header";
-import Profile from "../components/home/Profile";
-import ArticleOptions from "../components/home/ArticleOptions";
 import ImgWrapper from "../components/common/ImgWrapper";
+import { StyledTag } from "../components/home/ArticleCard";
+import Profile from "../components/home/Profile";
 
 const Article = () => {
   // 데이터를 넘기는 방법 -> Link
   // 데이터를 받는 방법 -> useLocation
   const location = useLocation();
-  const { title, body, thumbnail, date, tags } = location;
+  const article = location.state;
+  const { title, body, thumbnail, date, tags } = article;
   return (
     <div>
       <Header />
       <h1>{title}</h1>
-      <ArticleOptions />
+      <ArticleOptions article={article} />
       <div>
         <span>서혜은</span>
-        <span>.</span>
+        <span> · </span>
         <span>{date}</span>
       </div>
-      {tags.map((tag) => (
-        <span key={tag}>{tag}</span>
-      ))}
+      <StyledTag>
+        {tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
+      </StyledTag>
       {thumbnail && (
         <ImgWrapper ratio="50%">
           <img src={thumbnail} alt="thumbnail" />

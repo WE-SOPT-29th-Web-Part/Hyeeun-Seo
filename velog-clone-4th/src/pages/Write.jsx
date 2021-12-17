@@ -1,80 +1,110 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
+import styled from "styled-components";
 import ArticleBody from "../components/write/ArticleBody";
 import ArticleFooter from "../components/write/ArticleFooter";
-import ArticleTags from "../components/write/ArticleTags";
+import ArticleTag from "../components/write/ArticleTag";
 import ArticleTitle from "../components/write/ArticleTitle";
+import PublishScreen from "../components/write/PublishScreen/index";
 import { client } from "../libs/api";
+import { colors } from "../libs/constants/colors";
 
 const Write = () => {
-  // 필요한 데이터를 입력과 동시에 받아오고(state로 관리), 출간하기를 누르면 axios.post를 시킨다
-  const [articleData, setArticleData] = useState({
-    id: "", // articleData.length+1해주면 됨
-    title: "",
-    body: "",
-    summary: "",
-    series: "",
-    tags: [],
-    thumbnail: "",
-    date: "", // 오늘 날짜 찍어주면 됨
-  });
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  const article = location.state;
+
+  const [articleData, setArticleData] = useState(
+    article ?? {
+      title: "",
+      body: "",
+      summary: "",
+      tags: [],
+      thumbnail: "",
+    }
+  );
+
+  const [isPublishScreen, setIsPublishScreen] = useState(false);
 
   const createArticle = async () => {
-    const { data } = await client.get("/article");
-    const id = data.length + 1; //이게 먼소리야
-    const now = new Date();
-    const date = `${now.getFullYear()}년 ${
-      now.getMonth() + 1
-    }월 ${now.getDate()}일`;
-
-    await client.post("/article", {
-      ...articleData,
-      id,
-      date,
-      summary: "요약",
-    });
-  };
-  const handlePost = async () => {
-    await createArticle();
+    // 수정 중일때 출간하기를 누르면 update 시키고, -> patch
+    // 새글작성중일때 출간하기를 누르면 post 시킨다.
+    if (article) {
+      await client.patch(`article/${article.id}`, articleData);
+      navigate(`/article/${article.id}`, { state: articleData });
+      return;
+    }
+    await client.post("/article", articleData);
+    navigate("/");
   };
 
   const handleDataChange = (key, value) => {
-    // key: title, body, summary, thumbnail
-    // value: e.target.value
+    // title, body, summary, series, thumbnail의 변화에 적용ㅐ
     const tempArticleData = { ...articleData };
-    // 객체 복사 -> 상태는 불변성을 유지해야 한다. 상태 불변성
-    // 대괄호 안에 키를 넣어야 value 변수로 tempArticleData 객체 속성 조회 가능
     tempArticleData[key] = value;
     setArticleData(tempArticleData);
   };
-  // 배열(tags)를 수정하기 위한 함수
   const handleArrDataChange = (key, value) => {
+    // tag의 변화에 적용
     const tempArticleData = { ...articleData };
     tempArticleData[key] = [...tempArticleData[key], value];
     setArticleData(tempArticleData);
   };
-
-  const handleArrDataRemove = (key, value) => {
+  const handleArrDataRemove = (key, innerText) => {
     const tempArticleData = { ...articleData };
-    // filter
-    tempArticleData[key] = tempArticleData[key].filter((el) => el !== value);
-    // value -> 클릭된 태그 속에 있는 글자
+    tempArticleData[key] = tempArticleData[key].filter(
+      (item) => item !== innerText
+    );
     setArticleData(tempArticleData);
   };
 
   return (
-    <div>
-      <button onClick={handlePost}>POST!</button>
-      <ArticleTitle onDataChange={handleDataChange} />
-      <ArticleTags
-        tags={articleData.tags}
-        articleData={articleData}
-        onArrDataChange={handleArrDataChange}
-        onArrDataRemove={handleArrDataRemove}
+    <StyledRoot>
+      <StyledTop>
+        <ArticleTitle
+          title={articleData.title}
+          handleDataChange={handleDataChange}
+        />
+        <StyledMiddleLine />
+        <ArticleTag
+          tags={articleData.tags}
+          handleArrDataChange={handleArrDataChange}
+          handleArrDataRemove={handleArrDataRemove}
+        />
+      </StyledTop>
+      <ArticleBody
+        body={articleData.body}
+        handleDataChange={handleDataChange}
       />
-      <ArticleBody onDataChange={handleDataChange} />
-      <ArticleFooter />
-    </div>
+      <ArticleFooter setIsPublishScreen={setIsPublishScreen} />
+      <PublishScreen
+        summary={articleData.summary}
+        onDataChange={handleDataChange}
+        createArticle={createArticle}
+        isPublishScreen={isPublishScreen}
+        setIsPublishScreen={setIsPublishScreen}
+      />
+    </StyledRoot>
   );
 };
 
 export default Write;
+
+const StyledRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+const StyledTop = styled.div`
+  padding: 32px 48px 0 48px;
+  width: 50%;
+`;
+
+const StyledMiddleLine = styled.div`
+  width: 64px;
+  height: 6px;
+  background-color: ${colors.lightGray};
+  margin: 24px 0;
+`;

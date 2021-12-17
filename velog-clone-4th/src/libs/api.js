@@ -10,6 +10,6 @@ export const client = axios.create({
 export const imageClient = axios.create({
   baseURL: "http://localhost:5000/api/image",
   headers: {
-    "Content-Type": "mutipart/formdata",
+    "Content-Type": "multipart/form-data",
   },
 });
