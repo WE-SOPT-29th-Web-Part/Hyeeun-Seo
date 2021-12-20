@@ -18,6 +18,10 @@ footer {
   line-height: 50px;
 }
 
+header h1 {
+  margin: 0;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -38,16 +42,45 @@ nav > button {
 #main {
   display: flex;
   flex-direction: row;
-}
-
-header h1 {
-  margin: 0;
+  background-color: #779645;
 }
 
 .todo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.today {
+  border-right: 1px solid #ca413d;
+}
+
+.todo ul {
+  flex: 1;
+}
+
+.todo h2 {
+  margin: 10px 0;
+  color: white;
+}
+
+.todo input {
+  width: 100%;
+  border: 0;
+}
+
+.btn {
+  height: 30px;
+  line-height: 30px;
+  align-items: center;
+}
+
+.btn button {
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  background-color: #94b957;
 }
 
 footer {
