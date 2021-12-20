@@ -1,11 +1,6 @@
 * {
   margin: 0;
-}
-
-#wrapper {
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 header,
@@ -53,11 +48,7 @@ nav > button {
 }
 
 .today {
-  border-right: 1px solid #ca413d;
-}
-
-.todo ul {
-  flex: 1;
+  border-right: 1px solid #274530;
 }
 
 .todo h2 {
@@ -68,6 +59,7 @@ nav > button {
 .todo input {
   width: 100%;
   border: 0;
+  outline: 0;
 }
 
 .btn {
@@ -84,7 +76,5 @@ nav > button {
 }
 
 footer {
-  height: 50px;
-  position: relative;
-  transform: translateY(-100%);
+  display: block;
 }
