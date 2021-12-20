@@ -4,25 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>2차 과제 - ToDoList</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>To Do List</header>
+    <header><h1>To Do List</h1></header>
     <nav>
       <button>오늘만 보기</button>
       <button>내일만 보기</button>
       <button>함께 보기</button>
     </nav>
-    <section>
-      <div>
-        <h3>오늘 할 일</h3>
+    <section id="main">
+      <div class="todo today">
+        <h2>오늘 할 일</h2>
+        <ul></ul>
         <input type="text" />
-        <button>+</button>
+        <div class="btn"><button>+</button></div>
       </div>
-      <div>
-        <h3>내일 할 일</h3>
+      <div class="todo tomorrow">
+        <h2>내일 할 일</h2>
+        <ul></ul>
         <input type="text" />
-        <button>+</button>
+        <div class="btn"><button>+</button></div>
       </div>
     </section>
     <footer>SOPT 29th Web Part</footer>
