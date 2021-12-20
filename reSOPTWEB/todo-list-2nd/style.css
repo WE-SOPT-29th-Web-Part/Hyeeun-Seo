@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 header,
 footer {
   width: 100%;
@@ -34,9 +40,9 @@ nav > button {
   cursor: pointer;
 }
 
-#main {
+main {
   display: flex;
-  flex-direction: row;
+  flex: 1;
   background-color: #779645;
 }
 
@@ -60,6 +66,10 @@ nav > button {
   width: 100%;
   border: 0;
   outline: 0;
+}
+
+.todo ul {
+  flex: 1;
 }
 
 .btn {
