@@ -8,42 +8,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header><h1>To Do List</h1></header>
-    <nav>
-      <button>오늘만 보기</button>
-      <button>내일만 보기</button>
-      <button>함께 보기</button>
+    <!-- id와 class 명을 어떻게 지어야 할까요 -->
+    <header><h1 class="header_logo">To Do List</h1></header>
+    <nav class="options">
+      <button class="options_btn options_today">오늘만 보기</button>
+      <button class="options_btn options_tomorrow">내일만 보기</button>
+      <button class="options_btn options_both">함께 보기</button>
     </nav>
-    <main>
-      <section class="todo today">
-        <h2>오늘 할 일</h2>
-        <ul>
-          <li>
-            <span> ToDoList CSS 완성 </span>
-            <img src="/todo-list-2nd/trash-2.svg" alt="" />
+    <main class="todos">
+      <section class="todo_today open">
+        <h2 class="todos_header">오늘 할 일</h2>
+        <ul class="todos_items">
+          <li class="todos_item">
+            <span class="todos_name"> ToDoList CSS 완성 </span>
+            <button class="todos_delete">
+              <img src="/todo-list-2nd/trash-2.svg" alt="" id="trashIcon" />
+            </button>
           </li>
-          <li>
-            <span> ToDoList JS 완성 </span>
-            <img src="/todo-list-2nd/trash-2.svg" alt="" />
+          <li class="todos_item">
+            <span class="todos_name"> ToDoList JS 완성 </span>
+            <button class="todos_delete">
+              <img src="/todo-list-2nd/trash-2.svg" alt="" id="trashIcon" />
+            </button>
           </li>
         </ul>
-        <input type="text" />
-        <div class="btn"><button>+</button></div>
+        <input class="todos_input" type="text" />
+        <div class="todos_btn--wrapper"><button>+</button></div>
       </section>
-      <section class="todo tomorrow">
-        <h2>내일 할 일</h2>
-        <ul>
-          <li>
-            <span> Velog CSS 완성 </span>
-            <img src="/todo-list-2nd/trash-2.svg" alt="" />
+      <section class="todo_tomorrow open">
+        <h2 class="todos_header">내일 할 일</h2>
+        <ul class="todos_items">
+          <li class="todos_item">
+            <span class="todos_name"> Velog CSS 완성 </span>
+            <button class="todos_delete">
+              <img src="/todo-list-2nd/trash-2.svg" alt="" id="trashIcon" />
+            </button>
           </li>
-          <li>
-            <span> Velog JS 완성 </span>
-            <img src="/todo-list-2nd/trash-2.svg" alt="" />
+          <li class="todos_item">
+            <span class="todos_name"> Velog JS 완성 </span>
+            <button class="todos_delete">
+              <img src="/todo-list-2nd/trash-2.svg" alt="" id="trashIcon" />
+            </button>
           </li>
         </ul>
-        <input type="text" />
-        <div class="btn"><button>+</button></div>
+        <input class="todos_input" type="text" />
+        <div class="todos_btn--wrapper"><button>+</button></div>
       </section>
     </main>
     <footer>SOPT 29th Web Part</footer>
