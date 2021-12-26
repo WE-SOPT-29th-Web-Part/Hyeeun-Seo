@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0; /*body에 하는 것과 *에 하는 것의 차이*/
   box-sizing: border-box;
 }
 
@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%; /*정확히 어떤 효과가 있는 걸까*/
 }
 
 header,
@@ -19,20 +20,21 @@ footer {
   line-height: 50px;
 }
 
-header h1 {
+.header_logo {
   margin: 0;
+  /*수평 수직 정렬 필수로 해야할지?*/
 }
 
-nav {
+.options {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: row; /*이거 필요하지 않은지?*/
+  align-items: center; /*이거 필요하지 않은지?*/
   justify-content: center;
   height: 40px;
   background-color: #edb361;
 }
 
-nav > button {
+.options_btn {
   margin: 0 5px;
   background-color: #779645;
   border-radius: 50px;
@@ -40,44 +42,40 @@ nav > button {
   cursor: pointer;
 }
 
-main {
+.todos {
   display: flex;
   flex: 1;
   background-color: #779645;
+  /*width 건드려야 되는지 확인*/
 }
 
-.todo {
+.todos_today,
+.todos_tomorrow {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
+/*open일 때와 아닐 때 설정*/
 
-.today {
+.todos_today {
   border-right: 1px solid #274530;
 }
 
-h2 {
+.todos_header {
   margin: 10px 0;
   color: #274530;
 }
 
-input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-}
+/*ul의 스타일링*/
+/*li스타일링이랑 .todos_item 스타일링이랑 뭐가 다른데?*/
 
-ul {
-  flex: 1;
-  padding: 0 10px;
+.todos_item {
   width: 100%;
-}
-
-li {
+  /* border: 0;
+  outline: 0; */
   list-style: none;
   border-bottom: 1px solid #ca413d;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,17 +84,26 @@ li {
   color: white;
 }
 
-img {
-  cursor: pointer;
+.todos_name {
+  flex: 1;
+  padding: 0 10px;
+  width: 100%;
 }
 
-.btn {
+.todos_delete {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.todos_btn {
   height: 30px;
   line-height: 30px;
   align-items: center;
 }
 
-.btn button {
+.todos_btn > button {
   cursor: pointer;
   border-radius: 15px;
   font-weight: bold;
