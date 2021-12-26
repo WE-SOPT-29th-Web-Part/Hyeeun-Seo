@@ -1,0 +1,115 @@
+* {
+  margin: 0; /*body에 하는 것과 *에 하는 것의 차이*/
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%; /*정확히 어떤 효과가 있는 걸까*/
+}
+
+header,
+footer {
+  width: 100%;
+  background-color: #497542;
+  color: #ca413d;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.header_logo {
+  margin: 0;
+  /*수평 수직 정렬 필수로 해야할지?*/
+}
+
+.options {
+  display: flex;
+  flex-direction: row; /*이거 필요하지 않은지?*/
+  align-items: center; /*이거 필요하지 않은지?*/
+  justify-content: center;
+  height: 40px;
+  background-color: #edb361;
+}
+
+.options_btn {
+  margin: 0 5px;
+  background-color: #779645;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todos {
+  display: flex;
+  flex: 1;
+  background-color: #779645;
+  /*width 건드려야 되는지 확인*/
+}
+
+.todos_today,
+.todos_tomorrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+/*open일 때와 아닐 때 설정*/
+
+.todos_today {
+  border-right: 1px solid #274530;
+}
+
+.todos_header {
+  margin: 10px 0;
+  color: #274530;
+}
+
+/*ul의 스타일링*/
+/*li스타일링이랑 .todos_item 스타일링이랑 뭐가 다른데?*/
+
+.todos_item {
+  width: 100%;
+  /* border: 0;
+  outline: 0; */
+  list-style: none;
+  border-bottom: 1px solid #ca413d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  height: 30px;
+  color: white;
+}
+
+.todos_name {
+  flex: 1;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.todos_delete {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.todos_btn {
+  height: 30px;
+  line-height: 30px;
+  align-items: center;
+}
+
+.todos_btn > button {
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  background-color: #94b957;
+}
+
+footer {
+  display: block;
+}
